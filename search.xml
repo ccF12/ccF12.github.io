@@ -1,6 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[JavaScript对象的概念]]></title>
+    <url>%2F2019%2F07%2F12%2FJavaScript%E5%AF%B9%E8%B1%A1%E7%9A%84%E6%A6%82%E5%BF%B5%2F</url>
+    <content type="text"><![CDATA[一 内建对象 -由es标准定义的对象,再任何es中都可以使用-比如Math String Number Boolean Object 二 宿主对象 -由Js的运行环境提供的对象,目前来讲主要针对浏览器提供的对象-BOM DOM 三 自建对象 -由开发人员自己创建的对象 创建对象 使用new关键字创建对象:var obj = new Object(); 字面量创建对象:var obj = {}; 属性名可以不加双引号,特殊字符除外 12345var obj2 = &#123; name = "io", age = 12, about = "" &#125;; 添加属性: 属性名不强制要求遵守标识符的规则,可任意操作,尽量见名知意: 语法:对象[“属性名”] = 属性值; []中可以直接传递一个变量,变量的值是多少,属性值就是多少 12345var a = "你好";obj[a];obj.name = "大哥大";obj.age = 12;obj["123"] = 321; 获取对象属性: 没有定义的属性返回undefined name = obj.name; 删除属性:delete obj.name; 属性值: 可以设置任意数据类型,包括object 12obj.name = "初音未来";obj2.japan = obj; japan的值,随着obj.name的变化而变化 使用in运算,检测是否具有某种属性 “属性名” in obj; 反参为blooean 内存关系基本数据类型,键值对保存在栈内存中,键值对之间没有直接联系引用数据类型,保存在堆内存当中,每创建一个对象,就会在堆内存中开辟一个空间用于存储对象内容对象名对应的是内存地址(对象的引用)]]></content>
+      <categories>
+        <category>前端工具</category>
+      </categories>
+      <tags>
+        <tag>JavaScript</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[正则表达式]]></title>
+    <url>%2F2019%2F07%2F12%2F%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%2F</url>
+    <content type="text"><![CDATA[正则表达式的使用 var 变量 = new RegExp(“正则表达式”,”匹配模式”);var reg = /正则表达式/匹配模式 12var test = new RegExp();var reg = /[a-z]/-g 正则表达式可以使用 | 分开,表达式可以用[ ]装起来 a|b ==[ab] [a-z]任意小写字母 [A-Z]任意大写字母 [A-z]任意字母,不区别大小写 [^ab]除了ab的任意小写字母 [0-9]任意数字 [^0-9]除了数字 匹配模式可选值: -i 忽略大小写 -g 全局匹配模式 特殊: \w 任意字母,数字和下划线 [A-z0-9_] \W 除了字母数字和下划线 [^A-z0-9_] \d 任意数字 [0-9] \D 除了数字 [^0-9] \s 空格 \S 除了空格 \b 单词边界 [\bhello\b] -test(); 检查是否符合正则表达式,返回boolean值 量词: 控制变量出现的次数 a{n},a出现n次 只对它前边的内容控制次数 (ab){n},ab出现n次 可以设置出现范围 a{n,n},a出现n到n次 a{n,}a出现n次以上 a+,至少出现一次相当于a{1,} a*,零个或多个相当于a{0,} a?,零个或一个相当于a{0,1} ^a,是否是a开头 a%,是否是a结尾]]></content>
+      <categories>
+        <category>前端工具</category>
+      </categories>
+      <tags>
+        <tag>JavaScript</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[JS简单的鼠标跟随事件思路]]></title>
     <url>%2F2019%2F07%2F11%2FJS%E7%AE%80%E5%8D%95%E7%9A%84%E9%BC%A0%E6%A0%87%E8%B7%9F%E9%9A%8F%E4%BA%8B%E4%BB%B6%E6%80%9D%E8%B7%AF%2F</url>
     <content type="text"><![CDATA[简单的实现:设置一个方块,当鼠标移入窗口时,方块跟随鼠标,当鼠标移出时方块消失,提供思路,方块可替换素材 设置方块 12345#box1 &#123; width: 20px; height: 20px; position: absolute;//需要绝对定位方块才能移动 &#125; 获得方块和body 12var box = document.getElementById("box1");var bodywindow = document.documentElement; 给body设置鼠标移入事件 12345678910111213bodywindow.onmousemove = function (event) &#123; event = event || window.event; //pageX,pageY当对于页面的坐标,不兼容ie8 // var x = event.pageX; // var y = event.pageY; //由于浏览器不一样,认定的父元素不一致,所以需要这种方式获得父元素并获得滚动坐标 var st = document.body.scrollTop || document.documentElement.scrollTop; var sl = document.body.scrollLeft || document.documentElement.scrollLeft; //设置偏移量,使用event封装的对象获得属性并且拼串获得string box.style.left = event.clientX + sl + "px"; box.style.top = event.clientY + st + "px"; box.style.backgroundColor = "aqua"; &#125; 设置鼠标移出事件 123bodywindow.onmouseout = function () &#123; box.style.backgroundColor = "white" &#125; 效果展示]]></content>
