@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[JS简单的鼠标跟随事件思路]]></title>
+    <url>%2F2019%2F07%2F11%2FJS%E7%AE%80%E5%8D%95%E7%9A%84%E9%BC%A0%E6%A0%87%E8%B7%9F%E9%9A%8F%E4%BA%8B%E4%BB%B6%E6%80%9D%E8%B7%AF%2F</url>
+    <content type="text"><![CDATA[简单的实现:设置一个方块,当鼠标移入窗口时,方块跟随鼠标,当鼠标移出时方块消失,提供思路,方块可替换素材 设置方块 12345#box1 &#123; width: 20px; height: 20px; position: absolute;//需要绝对定位方块才能移动 &#125; 获得方块和body 12var box = document.getElementById("box1");var bodywindow = document.documentElement; 给body设置鼠标移入事件 12345678910111213bodywindow.onmousemove = function (event) &#123; event = event || window.event; //pageX,pageY当对于页面的坐标,不兼容ie8 // var x = event.pageX; // var y = event.pageY; //由于浏览器不一样,认定的父元素不一致,所以需要这种方式获得父元素并获得滚动坐标 var st = document.body.scrollTop || document.documentElement.scrollTop; var sl = document.body.scrollLeft || document.documentElement.scrollLeft; //设置偏移量,使用event封装的对象获得属性并且拼串获得string box.style.left = event.clientX + sl + "px"; box.style.top = event.clientY + st + "px"; box.style.backgroundColor = "aqua"; &#125; 设置鼠标移出事件 123bodywindow.onmouseout = function () &#123; box.style.backgroundColor = "white" &#125; 效果展示]]></content>
+      <categories>
+        <category>前端</category>
+      </categories>
+      <tags>
+        <tag>JavaScript</tag>
+        <tag>鼠标事件</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[html表单汇总]]></title>
     <url>%2F2019%2F07%2F11%2FHtml%E8%A1%A8%E5%8D%95%E6%B1%87%E6%80%BB%2F</url>
     <content type="text"><![CDATA[不包含h5 form标签 form是表单标签,属性action是服务器地址 &lt;labie&gt;设置表达提示文字 其中可以设置属性for=”id” &lt;fieldset&gt;设置分组 其中再使用&lt;legend&gt;可以设置分组名 12&lt;form action="#"&gt;&lt;/form&gt; 表单元素必须在form标签中 typeinput type=”text”为文本输入框input type=”passworld”为密码框,设置name值指定回调input type=”submit”为提交按钮,可以在后面加value属性指定显示的文字 当希望提交到服务器时,需要给此属性加上name指定唯一性 value可以指定默认值 disabled = “disable” 不可用 123用户:&lt;input type="text" name="uesrname" /&gt;密码:&lt;input type="password" name="uesrpassworld" /&gt;&lt;input type="submit" value="提交" /&gt; input type=”radio单选框” name属性设置同一个组 value属性设置回调12性别&lt;input type="radio" name="man" value="man" /&gt;男 &lt;input type="radio" name="man" value="wuman" checked="checked" /&gt;女 input type=”checkbox”多选框 name属性设置分组 value设置属性回调 checked=”checked”默认选中1234最爱的游戏:&lt;input type="checkbox" name="game" value="1" /&gt;刺客信条 &lt;input type="checkbox" name="game" value="2" /&gt;巫师3 &lt;input type="checkbox" name="game" value="3" /&gt;地铁2033 &lt;input type="checkbox" name="game" value="4" /&gt;赛博朋克2077 select 设置下拉列表 name属性 option标签设置拉下选项 value属性回调 selected=”selected”默认选中 multiple=”multiple”设置为多选下拉列表 &lt;optgroup label=&quot;组名&quot;&gt;可以设置下拉列表的分组123456游戏:&lt;select name="game"&gt; &lt;option value="1"&gt;刺客信条&lt;/option&gt; &lt;option value="2"&gt;巫师3&lt;/option&gt; &lt;option value="3"&gt;地铁2033&lt;/option&gt; &lt;option value="4" selected="selected"&gt;赛博朋克2077&lt;/option&gt; &lt;/select&gt; textarea设置文本域 placeolder设置提示文字 &lt;input type=&quot;reset&quot; value=&quot;reset&quot; /&gt;* &lt;input type=&quot;button&quot;&gt; 空白按钮*1&lt;textarea name="myself" id="me" cols="30" rows="10" placeholder="自我介绍"&gt;&lt;/textarea&gt;]]></content>
@@ -8,7 +20,8 @@
         <category>前端</category>
       </categories>
       <tags>
-        <tag>-html -表单</tag>
+        <tag>html</tag>
+        <tag>表单</tag>
       </tags>
   </entry>
   <entry>

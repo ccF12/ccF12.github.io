@@ -73,7 +73,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="JavaScript,鼠标事件,">
 
 
 
@@ -84,17 +84,20 @@
 
 
 
-<meta name="description" content="故立志者,为学之心也；为学者,立志之事也">
-<meta property="og:type" content="website">
-<meta property="og:title" content="千里之行始于足下">
-<meta property="og:url" content="http://yoursite.com/about/index.html">
+<meta name="description" content="简单的实现:设置一个方块,当鼠标移入窗口时,方块跟随鼠标,当鼠标移出时方块消失,提供思路,方块可替换素材  设置方块   12345#box1 &amp;#123;		width: 20px;		height: 20px;		position: absolute;//需要绝对定位方块才能移动        &amp;#125;  获得方块和body 12var box = document.getElement">
+<meta name="keywords" content="JavaScript,鼠标事件">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JS简单的鼠标跟随事件思路">
+<meta property="og:url" content="http://yoursite.com/2019/07/11/JS简单的鼠标跟随事件思路/index.html">
 <meta property="og:site_name" content="执迷">
-<meta property="og:description" content="故立志者,为学之心也；为学者,立志之事也">
+<meta property="og:description" content="简单的实现:设置一个方块,当鼠标移入窗口时,方块跟随鼠标,当鼠标移出时方块消失,提供思路,方块可替换素材  设置方块   12345#box1 &amp;#123;		width: 20px;		height: 20px;		position: absolute;//需要绝对定位方块才能移动        &amp;#125;  获得方块和body 12var box = document.getElement">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-07-10T17:53:47.386Z">
+<meta property="og:image" content="https://s2.ax1x.com/2019/07/11/ZRRvQI.gif">
+<meta property="og:updated_time" content="2019-07-11T15:55:13.098Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="千里之行始于足下">
-<meta name="twitter:description" content="故立志者,为学之心也；为学者,立志之事也">
+<meta name="twitter:title" content="JS简单的鼠标跟随事件思路">
+<meta name="twitter:description" content="简单的实现:设置一个方块,当鼠标移入窗口时,方块跟随鼠标,当鼠标移出时方块消失,提供思路,方块可替换素材  设置方块   12345#box1 &amp;#123;		width: 20px;		height: 20px;		position: absolute;//需要绝对定位方块才能移动        &amp;#125;  获得方块和body 12var box = document.getElement">
+<meta name="twitter:image" content="https://s2.ax1x.com/2019/07/11/ZRRvQI.gif">
 
 
 
@@ -124,13 +127,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/about/">
+  <link rel="canonical" href="http://yoursite.com/2019/07/11/JS简单的鼠标跟随事件思路/">
 
 
 
 
 
-  <title>千里之行始于足下 | 执迷</title>
+  <title>JS简单的鼠标跟随事件思路 | 执迷</title>
   
 
 
@@ -287,34 +290,240 @@
 
   <div id="posts" class="posts-expand">
     
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/11/JS简单的鼠标跟随事件思路/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="陈超凡">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="执迷">
+    </span>
+
     
-    
-    <div class="post-block page">
       <header class="post-header">
 
-	<h1 class="post-title" itemprop="name headline">千里之行始于足下</h1>
-
-
-
-</header>
-
-      
-      
-      
-      <div class="post-body">
         
         
-          <p>故立志者,为学之心也；为学者,立志之事也</p>
-
+          <h1 class="post-title" itemprop="name headline">JS简单的鼠标跟随事件思路</h1>
         
-      </div>
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-07-11T22:13:05+08:00">
+                2019-07-11
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/前端/" itemprop="url" rel="index">
+                    <span itemprop="name">前端</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  244
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  1
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
       
       
+
+      
+        <blockquote>
+<p>简单的实现:设置一个方块,当鼠标移入窗口时,方块跟随鼠标,当鼠标移出时方块消失,提供思路,方块可替换素材</p>
+</blockquote>
+<p><strong>设置方块</strong>  </p>
+<figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-id">#box1</span> &#123;</span><br><span class="line">		<span class="attribute">width</span>: <span class="number">20px</span>;</span><br><span class="line">		<span class="attribute">height</span>: <span class="number">20px</span>;</span><br><span class="line">		<span class="attribute">position</span>: absolute;<span class="comment">//需要绝对定位方块才能移动</span></span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>获得方块和body</strong></p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> box = <span class="built_in">document</span>.getElementById(<span class="string">"box1"</span>);</span><br><span class="line"><span class="keyword">var</span> bodywindow = <span class="built_in">document</span>.documentElement;</span><br></pre></td></tr></table></figure>
+
+<p><strong>给body设置鼠标移入事件</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">bodywindow.onmousemove = <span class="function"><span class="keyword">function</span> (<span class="params">event</span>) </span>&#123;</span><br><span class="line">		event = event || <span class="built_in">window</span>.event;</span><br><span class="line">		<span class="comment">//pageX,pageY当对于页面的坐标,不兼容ie8</span></span><br><span class="line">		<span class="comment">// var x = event.pageX;</span></span><br><span class="line">		<span class="comment">// var y = event.pageY;</span></span><br><span class="line">		<span class="comment">//由于浏览器不一样,认定的父元素不一致,所以需要这种方式获得父元素并获得滚动坐标</span></span><br><span class="line">		<span class="keyword">var</span> st = <span class="built_in">document</span>.body.scrollTop || <span class="built_in">document</span>.documentElement.scrollTop;</span><br><span class="line">		<span class="keyword">var</span> sl = <span class="built_in">document</span>.body.scrollLeft || <span class="built_in">document</span>.documentElement.scrollLeft;</span><br><span class="line">		<span class="comment">//设置偏移量,使用event封装的对象获得属性并且拼串获得string</span></span><br><span class="line">		box.style.left = event.clientX + sl + <span class="string">"px"</span>;</span><br><span class="line">		box.style.top = event.clientY + st + <span class="string">"px"</span>;</span><br><span class="line">		box.style.backgroundColor = <span class="string">"aqua"</span>;</span><br><span class="line">			&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>设置鼠标移出事件</strong></p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">bodywindow<span class="selector-class">.onmouseout</span> = function () &#123;</span><br><span class="line">                box<span class="selector-class">.style</span><span class="selector-class">.backgroundColor</span> = <span class="string">"white"</span></span><br><span class="line">            &#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>效果展示</strong><br><img src="https://s2.ax1x.com/2019/07/11/ZRRvQI.gif" alt></p>
+
       
     </div>
     
     
     
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/JavaScript/" rel="tag"><i class="fa fa-tag"></i> JavaScript</a>
+          
+            <a href="/tags/鼠标事件/" rel="tag"><i class="fa fa-tag"></i> 鼠标事件</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/07/11/Html表单汇总/" rel="next" title="html表单汇总">
+                <i class="fa fa-chevron-left"></i> html表单汇总
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+<span class="jiathis_txt">分享到：</span>
+<a class="jiathis_button_fav">收藏夹</a>
+<a class="jiathis_button_copy">复制网址</a>
+<a class="jiathis_button_email">邮件</a>
+<a class="jiathis_button_weixin">微信</a>
+<a class="jiathis_button_qzone">QQ空间</a>
+<a class="jiathis_button_tqq">腾讯微博</a>
+<a class="jiathis_button_douban">豆瓣</a>
+<a class="jiathis_button_share">一键分享</a>
+
+<a href="http://www.jiathis.com/share?uid=2140465" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank">更多</a>
+<a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript">
+var jiathis_config={
+  data_track_clickback:true,
+  summary:"",
+  shortUrl:false,
+  hideMore:false
+}
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+      
+    </div>
   </div>
 
 
