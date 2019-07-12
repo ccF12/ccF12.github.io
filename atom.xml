@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-07-11T17:47:41.502Z</updated>
+  <updated>2019-07-12T13:07:14.196Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -17,31 +17,273 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>H5设置全屏</title>
+    <link href="http://yoursite.com/2019/07/12/H5%E8%AE%BE%E7%BD%AE%E5%85%A8%E5%B1%8F/"/>
+    <id>http://yoursite.com/2019/07/12/H5设置全屏/</id>
+    <published>2019-07-12T12:47:49.000Z</published>
+    <updated>2019-07-12T13:07:14.196Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>本文简单的以H5的API设置一个全屏的Demo  </p></blockquote><p><strong>requestFullScreen() 开启全屏显示不同浏览器加不同前缀</strong> </p><ul><li>Chrome:webkit   </li><li>firefox:moz   </li><li>ie:ms   </li><li>opera:o</li></ul><a id="more"></a><p><strong>cancelFullScreen  退出全屏,必须使用document操作</strong><br><strong>fullScreenElement 是否全屏状态,使用document操作</strong></p><ul><li>首先设置一张图片,三个按钮,分别全屏,退出,和检查是否全屏</li></ul><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;<span class="selector-tag">div</span> id=<span class="string">"div"</span>&gt;</span><br><span class="line">&lt;<span class="selector-tag">img</span> src=<span class="string">"../web/02/img/img1.jpg"</span>&gt;</span><br><span class="line">&lt;<span class="selector-tag">button</span> type=<span class="string">"button"</span> id=<span class="string">"bt1"</span>&gt;全屏&lt;/button&gt;</span><br><span class="line">&lt;<span class="selector-tag">button</span> type=<span class="string">"button"</span> id=<span class="string">"bt2"</span>&gt;退出&lt;/button&gt;</span><br><span class="line">&lt;<span class="selector-tag">button</span> type=<span class="string">"button"</span> id=<span class="string">"bt3"</span>&gt;检查&lt;/button&gt;</span><br><span class="line">&lt;/&lt;div&gt;</span><br></pre></td></tr></table></figure><p><img src="https://s2.ax1x.com/2019/07/12/Zfb2M8.png" alt></p><ul><li>给第一个按钮绑定时间,使imgdiv全屏显示:</li></ul><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> imgdiv = <span class="built_in">document</span>.getElementById(<span class="string">"div"</span>);</span><br><span class="line"><span class="built_in">document</span>.querySelector(<span class="string">"#bt1"</span>).onclick = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line"><span class="comment">// 解决兼容性问题</span></span><br><span class="line"><span class="keyword">if</span> (imgdiv.mozRequestFullScreen) &#123;</span><br><span class="line">imgdiv.mozRequestFullScreen();</span><br><span class="line">&#125; <span class="keyword">else</span> <span class="keyword">if</span> (imgdiv.webkitRequestFullScreen) &#123;</span><br><span class="line">imgdiv.webkitRequestFullScreen();</span><br><span class="line">&#125; <span class="keyword">else</span> <span class="keyword">if</span> (imgdiv.msRequestFullScreen) &#123;</span><br><span class="line">imgdiv.msRequestFullScreen();</span><br><span class="line">&#125; <span class="keyword">else</span> <span class="keyword">if</span> (imgdiv.oRequestFullScreen) &#123;</span><br><span class="line">imgdiv.oRequestFullScreen();</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><ul><li>给第二个按钮绑定事件,取消imgdiv的全屏显示</li></ul><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">document</span>.querySelector(<span class="string">"#bt2"</span>).onclick = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line"><span class="keyword">if</span> (<span class="built_in">document</span>.mozCancelFullScreen) &#123;</span><br><span class="line"><span class="built_in">document</span>.mozCancelFullScreen();</span><br><span class="line">&#125; <span class="keyword">else</span> <span class="keyword">if</span> (<span class="built_in">document</span>.webkitCancelFullScreen) &#123;</span><br><span class="line"><span class="built_in">document</span>.webkitCancelFullScreen();</span><br><span class="line">&#125; <span class="keyword">else</span> <span class="keyword">if</span> (<span class="built_in">document</span>.msCancelFullScreen) &#123;</span><br><span class="line"><span class="built_in">document</span>.msCancelFullScreen();</span><br><span class="line">&#125; <span class="keyword">else</span> <span class="keyword">if</span> (<span class="built_in">document</span>.oCancelFullScreen) &#123;</span><br><span class="line"><span class="built_in">document</span>.oCancelFullScreen();</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><ul><li>给第三个按钮绑定事件,检测现在是否全屏</li></ul><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">document</span>.querySelector(<span class="string">"#bt3"</span>).onclick = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line"><span class="keyword">if</span> (<span class="built_in">document</span>.fullScreenElement || <span class="built_in">document</span>.webkitFullscreenElement ||</span><br><span class="line"><span class="built_in">document</span>.msFullScreenElement || <span class="built_in">document</span>.oFullScreenElement || <span class="built_in">document</span>.mozFullScreenElement) &#123;</span><br><span class="line">alert(<span class="string">"全屏"</span>);</span><br><span class="line">&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">alert(<span class="string">"正常"</span>);</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p><img src="https://s2.ax1x.com/2019/07/12/Zfbcxf.png" alt></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;本文简单的以H5的API设置一个全屏的Demo  &lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;requestFullScreen() 开启全屏显示不同浏览器加不同前缀&lt;/strong&gt; &lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Chrome:webkit   &lt;/li&gt;
+&lt;li&gt;firefox:moz   &lt;/li&gt;
+&lt;li&gt;ie:ms   &lt;/li&gt;
+&lt;li&gt;opera:o&lt;/li&gt;
+&lt;/ul&gt;
+    
+    </summary>
+    
+      <category term="前端" scheme="http://yoursite.com/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+      <category term="H5" scheme="http://yoursite.com/tags/H5/"/>
+    
+      <category term="Demo" scheme="http://yoursite.com/tags/Demo/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>canvas</title>
+    <link href="http://yoursite.com/2019/07/12/canvas/"/>
+    <id>http://yoursite.com/2019/07/12/canvas/</id>
+    <published>2019-07-12T11:56:10.000Z</published>
+    <updated>2019-07-12T12:41:04.087Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>本文主要讲述了H5的canvas标签的使用,关于画布和绘画</p></blockquote><h2 id="画布的创建"><a href="#画布的创建" class="headerlink" title="画布的创建"></a>画布的创建</h2><ul><li>使用canvas标签初始化画布</li></ul><p><code>&lt;canvas id=&quot;myCanvas&quot;&gt;&lt;/canvas&gt;</code></p><ul><li>在css中设置边框方便查看</li></ul><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-id">#myCanvas</span>&#123;</span><br><span class="line"><span class="attribute">border</span>: <span class="number">#FFFF00</span> groove <span class="number">2px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><a id="more"></a><ul><li>在JavaScript中动态获取或者设置画布大小</li></ul><figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">myCanvas.width</span> = <span class="number">500</span><span class="comment">;//js里设置宽高,直接使用id</span></span><br><span class="line"><span class="attr">myCanvas.height</span> = <span class="number">500</span><span class="comment">;</span></span><br></pre></td></tr></table></figure><ul><li>绘画需要在Js中获得canvas元素</li></ul><figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">var mv</span> = document.getElementById(<span class="string">"myCanvas"</span>);</span><br><span class="line"><span class="attribute">var cva</span> = mv.getContext(<span class="string">"2d"</span>);</span><br></pre></td></tr></table></figure><h2 id="fileRect方形"><a href="#fileRect方形" class="headerlink" title="fileRect方形"></a>fileRect方形</h2><p><strong>开始绘画时设置颜色和起始位置和大小</strong></p><ul><li>第一个0是x</li><li>第二个0是y</li><li>80是width</li><li>100是height</li><li>fillStyle设置颜色</li><li>fillRect设置位置和大小</li></ul><figure class="highlight lsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cva.fillStyle = <span class="string">"aqua"</span><span class="comment">//颜色</span></span><br><span class="line">cva.fillRect(<span class="number">0</span>,<span class="number">0</span>,<span class="number">80</span>,<span class="number">100</span>);<span class="comment">//位置大小</span></span><br></pre></td></tr></table></figure><p>由此画出一个长方形:<br><img src="https://s2.ax1x.com/2019/07/12/ZfWemt.png" alt></p><h3 id="无填充色"><a href="#无填充色" class="headerlink" title="无填充色"></a>无填充色</h3><figure class="highlight lsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cva.strokeStyle = <span class="string">"#FFFF00"</span>;<span class="comment">//无填充色,同时也是线条的颜色</span></span><br><span class="line">cva.strokeRect(<span class="number">100</span>,<span class="number">100</span>,<span class="number">80</span>,<span class="number">100</span>);<span class="comment">//无填充色定位</span></span><br></pre></td></tr></table></figure><p><img src="https://s2.ax1x.com/2019/07/12/ZfWm0P.png" alt></p><h2 id="绘画重新开始时-需要重置样式和路径"><a href="#绘画重新开始时-需要重置样式和路径" class="headerlink" title="绘画重新开始时,需要重置样式和路径"></a>绘画重新开始时,需要重置样式和路径</h2><figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">cva</span><span class="selector-class">.beginPath</span>();<span class="comment">//重置当前路径点,清除样式</span></span><br><span class="line"><span class="selector-tag">cva</span><span class="selector-class">.closePath</span>();<span class="comment">//关闭路径点,起始和结束闭合</span></span><br></pre></td></tr></table></figure><h2 id="直线绘画"><a href="#直线绘画" class="headerlink" title="直线绘画"></a>直线绘画</h2><ul><li>moveTo设置起点位置</li><li>lineTo设置到达位置</li><li>fill开始绘画填充</li></ul><figure class="highlight lsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">cva.moveTo(<span class="number">20</span>,<span class="number">100</span>);</span><br><span class="line">cva.lineTo(<span class="number">100</span>,<span class="number">100</span>);</span><br><span class="line">cva.lineTo(<span class="number">100</span>,<span class="number">200</span>);</span><br><span class="line">cva.lineTo(<span class="number">20</span>,<span class="number">200</span>);</span><br><span class="line">cva.lineTo(<span class="number">20</span>,<span class="number">100</span>);</span><br><span class="line">cva.fillStyle = <span class="string">"#0000FF"</span>;<span class="comment">//填充颜色</span></span><br><span class="line">cva.fill();<span class="comment">//填充开始</span></span><br></pre></td></tr></table></figure><p><img src="https://s2.ax1x.com/2019/07/12/ZfWVOI.png" alt></p><h2 id="圆形绘画"><a href="#圆形绘画" class="headerlink" title="圆形绘画"></a>圆形绘画</h2><p><strong>context.arc(x,y,r,sAngle,eAngle,counterclockwise);</strong></p><ul><li>x:横向坐标</li><li>y纵向坐标</li><li>r半径</li><li>sAngle起始点</li><li>eAngle结束点</li><li>counterclockwise绘制方向 false顺时针 true逆时针</li></ul><figure class="highlight lsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cva.beginPath();</span><br><span class="line">cva.arc(<span class="number">300</span>,<span class="number">250</span>,<span class="number">50</span>,<span class="number">0</span>,<span class="number">2</span>*Math.<span class="literal">PI</span>,false);</span><br><span class="line">cva.stroke();</span><br></pre></td></tr></table></figure><p><img src="https://s2.ax1x.com/2019/07/12/ZfWAld.png" alt></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;本文主要讲述了H5的canvas标签的使用,关于画布和绘画&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;画布的创建&quot;&gt;&lt;a href=&quot;#画布的创建&quot; class=&quot;headerlink&quot; title=&quot;画布的创建&quot;&gt;&lt;/a&gt;画布的创建&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;使用canvas标签初始化画布&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;code&gt;&amp;lt;canvas id=&amp;quot;myCanvas&amp;quot;&amp;gt;&amp;lt;/canvas&amp;gt;&lt;/code&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;在css中设置边框方便查看&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure class=&quot;highlight css&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;selector-id&quot;&gt;#myCanvas&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;			&lt;span class=&quot;attribute&quot;&gt;border&lt;/span&gt;: &lt;span class=&quot;number&quot;&gt;#FFFF00&lt;/span&gt; groove &lt;span class=&quot;number&quot;&gt;2px&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;		&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+    
+    </summary>
+    
+      <category term="前端" scheme="http://yoursite.com/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+      <category term="H5" scheme="http://yoursite.com/tags/H5/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>H5表单新增属性</title>
+    <link href="http://yoursite.com/2019/07/12/H5%E8%A1%A8%E5%8D%95%E6%96%B0%E5%A2%9E%E5%B1%9E%E6%80%A7/"/>
+    <id>http://yoursite.com/2019/07/12/H5表单新增属性/</id>
+    <published>2019-07-12T11:27:37.000Z</published>
+    <updated>2019-07-12T11:52:55.629Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>本文列举了H5表单新增的属性和使用方法  </p></blockquote><ul><li>placeholder = “” 设置提示</li><li>autofocus 直接使用没有值，设置此属性的元素获得焦点</li><li>autocomplete=”on” 自动提示 on开启，off关闭,1.已有成功提交的值,2.当前元素有name属性</li></ul><figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">用户名：&lt;input type=<span class="string">"text"</span> name=<span class="string">"userName"</span> </span><br><span class="line">placeholder=<span class="string">"请输入您的昵称"</span> </span><br><span class="line">autofocus=<span class="string">"autofocus"</span> </span><br><span class="line">autocomplete=<span class="string">"on"</span> /&gt;</span><br></pre></td></tr></table></figure><a id="more"></a><ul><li>required设置此属性的元素必须填写，没有输入则阻止当前提交</li><li>pattern=””正则验证</li></ul><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">手机号：&lt;input <span class="attribute">type</span>=<span class="string">"tel"</span> <span class="attribute">name</span>=<span class="string">"userPhone"</span> </span><br><span class="line">required <span class="attribute">placeholder</span>=<span class="string">"11位数字手机号码"</span> </span><br><span class="line"><span class="attribute">pattern</span>=<span class="string">"^(\+86)?1\d&#123;10&#125;$"</span> /&gt;</span><br></pre></td></tr></table></figure><ul><li>multiple属性设置当前元素可以多选,可以设置多邮箱</li></ul><p><code>文件:&lt;input type=&quot;file&quot; name=&quot;userFile&quot; multiple /&gt;</code></p><ul><li>list,datalist设置可以输入的下拉选择框</li><li>label设置提示文字</li></ul><figure class="highlight xquery"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;input type=<span class="string">"text"</span><span class="built_in"> name</span>=<span class="string">"userGame"</span> list=<span class="string">"data"</span> /&gt;</span><br><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">datalist</span> <span class="attr">name</span> = <span class="string">"userGameOf"</span> <span class="attr">id</span>=<span class="string">"data"</span>&gt;</span></span></span><br><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span> =<span class="string">"刺客信条"</span> &gt;</span><span class="tag">&lt;/<span class="name">option</span>&gt;</span></span></span><br><span class="line">&lt;<span class="keyword">option</span> <span class="keyword">value</span> =<span class="string">"赛博朋克2077"</span> label=<span class="string">"等到下辈子"</span> &gt;&lt;/<span class="keyword">option</span>&gt;</span><br><span class="line">&lt;<span class="keyword">option</span> <span class="keyword">value</span> =<span class="string">"巫师3"</span> label=<span class="string">"救救CDPR吧"</span> &gt;&lt;/<span class="keyword">option</span>&gt;</span><br><span class="line">&lt;<span class="keyword">option</span> <span class="keyword">value</span> =<span class="string">"狂怒2"</span> label=<span class="string">"爽爽爽!"</span> &gt;&lt;/<span class="keyword">option</span>&gt;</span><br><span class="line">&lt;/datalist&gt;</span><br></pre></td></tr></table></figure><p><img src="https://s2.ax1x.com/2019/07/12/Zf0qKS.png" alt></p><ul><li>form= “”值为需要同步提交的form的id，首先多个分栏同步提交</li></ul><p><code>您的建议：&lt;input type=&quot;text&quot; name=&quot;userText&quot; form=&quot;form1&quot; /&gt;</code></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;本文列举了H5表单新增的属性和使用方法  &lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;placeholder = “” 设置提示&lt;/li&gt;
+&lt;li&gt;autofocus 直接使用没有值，设置此属性的元素获得焦点&lt;/li&gt;
+&lt;li&gt;autocomplete=”on” 自动提示 on开启，off关闭,1.已有成功提交的值,2.当前元素有name属性&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure class=&quot;highlight makefile&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;用户名：&amp;lt;input type=&lt;span class=&quot;string&quot;&gt;&quot;text&quot;&lt;/span&gt; name=&lt;span class=&quot;string&quot;&gt;&quot;userName&quot;&lt;/span&gt; &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;placeholder=&lt;span class=&quot;string&quot;&gt;&quot;请输入您的昵称&quot;&lt;/span&gt; &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;autofocus=&lt;span class=&quot;string&quot;&gt;&quot;autofocus&quot;&lt;/span&gt; &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;autocomplete=&lt;span class=&quot;string&quot;&gt;&quot;on&quot;&lt;/span&gt; /&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+    
+    </summary>
+    
+      <category term="前端" scheme="http://yoursite.com/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+      <category term="H5" scheme="http://yoursite.com/tags/H5/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>H5表单新增type值</title>
+    <link href="http://yoursite.com/2019/07/12/H5%E8%A1%A8%E5%8D%95%E6%96%B0%E5%A2%9Etype%E5%80%BC/"/>
+    <id>http://yoursite.com/2019/07/12/H5表单新增type值/</id>
+    <published>2019-07-12T10:33:30.000Z</published>
+    <updated>2019-07-12T11:45:31.341Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>本文主要列举了H5新增的表单Type的值,设定特殊的表单元素  </p></blockquote><h2 id="“email”"><a href="#“email”" class="headerlink" title="“email”"></a>“email”</h2><blockquote><p>验证邮箱，需要满足要求才能提交</p></blockquote><p><code>邮箱:&lt;input type=&quot;email&quot;/&gt;</code></p><p><img src="https://s2.ax1x.com/2019/07/12/ZfNN8O.png" alt></p><a id="more"></a><h2 id="“tel”"><a href="#“tel”" class="headerlink" title="“tel”"></a>“tel”</h2><blockquote><p>并不是验证号码，而是在移动端打开数字键盘，限制用户只能输入数字</p></blockquote><p><code>电话:&lt;input type=&quot;tel&quot;/&gt;</code></p><h2 id="“file”"><a href="#“file”" class="headerlink" title="“file”"></a>“file”</h2><blockquote><p>上传文件  </p></blockquote><ul><li>multiple属性可以设置多选  </li></ul><p><code>文件:&lt;input type=&quot;file&quot; name=&quot;userFile&quot; multiple /&gt;</code></p><p><img src="https://s2.ax1x.com/2019/07/12/Zf0y36.png" alt></p><h2 id="“url”"><a href="#“url”" class="headerlink" title="“url”"></a>“url”</h2><blockquote><p>验证网址，合法网址必要包含http://才能提交</p></blockquote><p><code>链接:&lt;input type=&quot;url&quot;value=&quot;http://&quot; /&gt;</code></p><p><img src="https://s2.ax1x.com/2019/07/12/ZfNrVI.png" alt></p><h2 id="“number”"><a href="#“number”" class="headerlink" title="“number”"></a>“number”</h2><blockquote><p>只能输入数字包含小数点，可以手动增加减少，常用购物车商品数量  </p></blockquote><ul><li>max最大值  </li><li>min最小值  </li><li>value默认值  </li></ul><p><code>数字:&lt;input type=&quot;number&quot;/&gt;</code></p><p><img src="https://s2.ax1x.com/2019/07/12/ZfNGUx.png" alt></p><h2 id="“search”"><a href="#“search”" class="headerlink" title="“search”"></a>“search”</h2><blockquote><p>常用语搜索  </p></blockquote><p><code>搜索:&lt;input type=&quot;search&quot;/&gt;</code></p><h2 id="“range”"><a href="#“range”" class="headerlink" title="“range”"></a>“range”</h2><blockquote><p>设置范围  </p></blockquote><ul><li>max最大值</li><li>min最小值</li><li>value默认值（默认为一半）</li></ul><p><code>数值:&lt;input type=&quot;range&quot; value=&quot;90&quot; /&gt;</code></p><p><img src="https://s2.ax1x.com/2019/07/12/ZfNtPK.png" alt></p><h2 id="“color”"><a href="#“color”" class="headerlink" title="“color”"></a>“color”</h2><blockquote><p>设置颜色</p></blockquote><ul><li>#开始，包含16进制格式的颜色值。例如：#FF0000为红色的16进制值。</li></ul><p><code>颜色:&lt;input type=&quot;color&quot; value=&quot;#ff0000&quot;/&gt;</code></p><p><img src="https://s2.ax1x.com/2019/07/12/ZfNU2D.png" alt></p><h2 id="“time”"><a href="#“time”" class="headerlink" title="“time”"></a>“time”</h2><blockquote><p>设置时间,时分秒,由于各浏览器实现方式不同,不推荐</p></blockquote><p><code>时间:&lt;input type=&quot;time&quot;/&gt;&lt;br&gt;</code></p><h2 id="“date”"><a href="#“date”" class="headerlink" title="“date”"></a>“date”</h2><blockquote><p>设置年份 年月日  </p></blockquote><p><code>年份:&lt;input type=&quot;date&quot;/&gt;&lt;br&gt;</code></p><p><img src="https://s2.ax1x.com/2019/07/12/ZfN8V1.png" alt></p><h2 id="“datetime-local”"><a href="#“datetime-local”" class="headerlink" title="“datetime-local”"></a>“datetime-local”</h2><blockquote><p>设置年月日时分秒  </p></blockquote><p><code>时间集合:&lt;input type=&quot;datetime-local&quot;/&gt;</code></p><p><img src="https://s2.ax1x.com/2019/07/12/ZfNJ56.png" alt></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;本文主要列举了H5新增的表单Type的值,设定特殊的表单元素  &lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;“email”&quot;&gt;&lt;a href=&quot;#“email”&quot; class=&quot;headerlink&quot; title=&quot;“email”&quot;&gt;&lt;/a&gt;“email”&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;验证邮箱，需要满足要求才能提交&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;code&gt;邮箱:&amp;lt;input type=&amp;quot;email&amp;quot;/&amp;gt;&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://s2.ax1x.com/2019/07/12/ZfNN8O.png&quot; alt&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="前端" scheme="http://yoursite.com/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+      <category term="H5" scheme="http://yoursite.com/tags/H5/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>H5的多媒体</title>
+    <link href="http://yoursite.com/2019/07/12/H5%E7%9A%84%E5%A4%9A%E5%AA%92%E4%BD%93/"/>
+    <id>http://yoursite.com/2019/07/12/H5的多媒体/</id>
+    <published>2019-07-12T09:24:40.000Z</published>
+    <updated>2019-07-12T10:26:33.910Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>本文主要介绍H5中新增的音频视频标签</p></blockquote><a id="more"></a><h2 id="audio音频"><a href="#audio音频" class="headerlink" title="audio音频:"></a>audio音频:</h2><figure class="highlight perl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;audio src=<span class="string">"../MP3/AKB48%20(エーケービー%20フォーティエイト)%20-%20梦を死なせるわけにいかない%20(不要让梦想死去).mp3"</span> </span><br><span class="line">   controls=<span class="string">"controls"</span> autoplay=<span class="string">"autoplay"</span> loop=<span class="string">"loop"</span> muted &gt;&lt;<span class="regexp">/audio&gt;</span></span><br></pre></td></tr></table></figure><ul><li>controls控制面板，设置才会出现播放界面，否则不可见</li><li>muted静音，最新浏览器设置了静音后才能自动播放</li><li>autoplay自动播放,移动端不支持</li><li>loop循环播放</li></ul><h3 id="JavaScript的api方法"><a href="#JavaScript的api方法" class="headerlink" title="JavaScript的api方法:"></a>JavaScript的api方法:</h3><ul><li>play()播放</li><li>pause()暂停播放</li></ul><hr><h2 id="video视频"><a href="#video视频" class="headerlink" title="video视频:"></a>video视频:</h2><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">video</span> <span class="attr">controls</span> &gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">source</span> <span class="attr">src</span>=<span class="string">"https://media.st.dl.bscstorage.net/steam/apps/256749663/movie480.webm?t=1556895640"</span> <span class="attr">type</span>=<span class="string">"video/webm"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">video</span>&gt;</span></span><br></pre></td></tr></table></figure><blockquote><p>为浏览器适配合适的文件格式使用source标签，src指向文件，需要填写type值，指向同一个文件的多个格式使用多个source  </p></blockquote><ul><li>controls控制面板，设置才会出现播放界面，否则不可见</li><li>muted静音，最新浏览器设置了静音后才能自动播放</li><li>autoplay自动播放,移动端不支持</li><li>loop循环播放</li><li>poster设置没有播放时显示的画面</li></ul><blockquote><p>width宽度height高度一般只设置一个，自动缩放  </p></blockquote>]]></content>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;本文主要介绍H5中新增的音频视频标签&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="前端" scheme="http://yoursite.com/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+      <category term="H5" scheme="http://yoursite.com/tags/H5/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>获取浏览器信息</title>
+    <link href="http://yoursite.com/2019/07/12/%E8%8E%B7%E5%8F%96%E6%B5%8F%E8%A7%88%E5%99%A8%E4%BF%A1%E6%81%AF/"/>
+    <id>http://yoursite.com/2019/07/12/获取浏览器信息/</id>
+    <published>2019-07-12T09:08:49.000Z</published>
+    <updated>2019-07-12T09:10:04.819Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>//userAgent获取浏览器信息,返回字符串</p></blockquote><a id="more"></a><figure class="highlight coffeescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (<span class="regexp">/firefox/i</span>.test(navigator.userAgent)) &#123;</span><br><span class="line">            alert(<span class="string">"火狐"</span>);</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (<span class="regexp">/chrome/i</span>.test(navigator.userAgent)) &#123;</span><br><span class="line">            alert(<span class="string">"chrome"</span>);</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (<span class="regexp">/msie/i</span>.test(navigator.userAgent)) &#123;</span><br><span class="line">            alert(<span class="string">"ie9-"</span>);</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (ActiveXObject <span class="keyword">in</span> <span class="built_in">window</span>) &#123;</span><br><span class="line">            alert(<span class="string">"ie"</span>);</span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;//userAgent获取浏览器信息,返回字符串&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="前端" scheme="http://yoursite.com/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+      <category term="JavaScript" scheme="http://yoursite.com/tags/JavaScript/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>JavaScript实现简单的键盘移动</title>
+    <link href="http://yoursite.com/2019/07/12/JavaScript%E5%AE%9E%E7%8E%B0%E7%AE%80%E5%8D%95%E7%9A%84%E9%94%AE%E7%9B%98%E7%A7%BB%E5%8A%A8/"/>
+    <id>http://yoursite.com/2019/07/12/JavaScript实现简单的键盘移动/</id>
+    <published>2019-07-12T08:43:07.000Z</published>
+    <updated>2019-07-12T10:18:32.772Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>用JavaScript实现键盘方向键控制移动  </p></blockquote><p><img src="https://s2.ax1x.com/2019/07/12/ZfixfO.gif" alt></p><a id="more"></a><ul><li>onkeydown 某个键被按下  </li><li>onkeyup某个键被松开  </li><li>event.keycode返回按键编码  </li></ul><p>获取方块元素:<br><code>var box1 = document.getElementById(&quot;box1&quot;);</code></p><p>设置初始速度和初始化方向</p><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> spane = <span class="number">10</span>;<span class="comment">//初始速度</span></span><br><span class="line"><span class="keyword">var</span> <span class="keyword">go</span> = <span class="number">0</span>;<span class="comment">//初始化方向</span></span><br></pre></td></tr></table></figure><blockquote><p>绑定onkeydown事件获得按键编码</p></blockquote><figure class="highlight mel"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">document.onkeydown = function (<span class="keyword">event</span>) &#123;</span><br><span class="line">                <span class="keyword">event</span> = <span class="keyword">event</span> || <span class="keyword">window</span>.<span class="keyword">event</span>;</span><br><span class="line">                <span class="comment">//是否按下ctrl键,按住了速度+1,没有按住速度等于10</span></span><br><span class="line">                <span class="keyword">event</span>.ctrlKey ? spane += <span class="number">1</span> : spane = <span class="number">10</span>;</span><br><span class="line">                <span class="comment">// 测试时用alert(event.keyCode);获得数值</span></span><br><span class="line">                go = <span class="keyword">event</span>.keyCode;<span class="comment">//获得方向按键编码</span></span><br><span class="line">            &#125;</span><br></pre></td></tr></table></figure><blockquote><p>调用定时器,在定时器里通过方面编码给方块设置style属性实现位移  </p></blockquote><figure class="highlight mipsasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">var tmer1 = setInterval(function () &#123;</span><br><span class="line"><span class="keyword">switch </span>(go) &#123;</span><br><span class="line">case <span class="number">37</span>:</span><br><span class="line"><span class="keyword">box1.style.left </span>= <span class="keyword">box1.offsetLeft </span>- spane + <span class="string">"px"</span><span class="comment">;</span></span><br><span class="line"><span class="keyword">break;</span></span><br><span class="line"><span class="keyword"></span>case <span class="number">38</span>:</span><br><span class="line">                    <span class="keyword">box1.style.top </span>= <span class="keyword">box1.offsetTop </span>- spane + <span class="string">"px"</span><span class="comment">;</span></span><br><span class="line">                    <span class="keyword">break;</span></span><br><span class="line"><span class="keyword"> </span>               case <span class="number">39</span>:</span><br><span class="line">                    <span class="keyword">box1.style.left </span>= <span class="keyword">box1.offsetLeft </span>+ spane + <span class="string">"px"</span><span class="comment">;</span></span><br><span class="line">                    <span class="keyword">break;</span></span><br><span class="line"><span class="keyword"> </span>               case <span class="number">40</span>:</span><br><span class="line">                    <span class="keyword">box1.style.top </span>= <span class="keyword">box1.offsetTop </span>+ spane + <span class="string">"px"</span></span><br><span class="line">                    <span class="keyword">break;</span></span><br><span class="line"><span class="keyword"> </span>            clearInterval(tmer1)<span class="comment">;</span></span><br><span class="line">                &#125;</span><br><span class="line">            &#125;, <span class="number">30</span>)<span class="comment">;</span></span><br></pre></td></tr></table></figure><p>完成.</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;用JavaScript实现键盘方向键控制移动  &lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;img src=&quot;https://s2.ax1x.com/2019/07/12/ZfixfO.gif&quot; alt&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="前端" scheme="http://yoursite.com/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+      <category term="Demo" scheme="http://yoursite.com/tags/Demo/"/>
+    
+      <category term="JavaScript" scheme="http://yoursite.com/tags/JavaScript/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>JavaScript事件的绑定</title>
+    <link href="http://yoursite.com/2019/07/12/JavaScript%E4%BA%8B%E4%BB%B6%E7%9A%84%E7%BB%91%E5%AE%9A/"/>
+    <id>http://yoursite.com/2019/07/12/JavaScript事件的绑定/</id>
+    <published>2019-07-12T08:19:58.000Z</published>
+    <updated>2019-07-12T08:46:23.005Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>本文阐述了原生JavaScript事件的绑定和增加绑定以及兼容方式  </p></blockquote><h2 id="事件的绑定"><a href="#事件的绑定" class="headerlink" title="事件的绑定:"></a>事件的绑定:</h2><blockquote><p>对象.事件 = function(){};  </p></blockquote><ul><li>响应函数都会传进一个封装的事件响应对象event</li><li>event.target,返回事件响应元素</li></ul><a id="more"></a><figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">bodywindow.onmousemove = <span class="function"><span class="keyword">function</span> <span class="params">(event)</span> </span>&#123;</span><br><span class="line">alert(<span class="string">"鼠标移入了"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p><strong>会被相同的事件重置</strong></p><h3 id="解决重置"><a href="#解决重置" class="headerlink" title="解决重置:"></a>解决重置:</h3><blockquote><p>对象.addEventListener(“-on事件”,回调函数,是否捕获时执行布尔值);</p></blockquote><figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">bun.addEventListener(<span class="string">"click"</span>, <span class="function"><span class="keyword">function</span> <span class="params">()</span> </span>&#123;</span><br><span class="line">                alert(<span class="number">1</span>);</span><br><span class="line">            &#125;, <span class="literal">false</span>);</span><br></pre></td></tr></table></figure><p><strong>ie8以下不支持</strong></p><blockquote><p>ie8以下可以使用对象.attachEvent(“事件”,回调函数);-后绑定先执行  </p></blockquote><figure class="highlight fortran"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">obj.attachEvent(onmousemove,<span class="function"><span class="keyword">function</span><span class="params">()</span></span>&#123;</span><br><span class="line">                        callback.<span class="keyword">call</span>(obj);</span><br><span class="line">                    &#125;)</span><br></pre></td></tr></table></figure><h2 id="兼容方式"><a href="#兼容方式" class="headerlink" title="兼容方式:"></a>兼容方式:</h2><figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">bing</span><span class="params">(obj,clickstr,callback)</span></span>&#123;</span><br><span class="line">                <span class="keyword">if</span>(obj.addEventListener)&#123;</span><br><span class="line">                    obj.addEventListener(clickstr,callback,<span class="literal">false</span>);</span><br><span class="line">                &#125;<span class="keyword">else</span>&#123; </span><br><span class="line">                    obj.attachEvent(<span class="string">"on"</span>+clickstr,<span class="function"><span class="keyword">function</span><span class="params">()</span></span>&#123;</span><br><span class="line">                        callback.call(obj);</span><br><span class="line">                    &#125;);</span><br><span class="line">            &#125;</span><br><span class="line">            &#125;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;本文阐述了原生JavaScript事件的绑定和增加绑定以及兼容方式  &lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;事件的绑定&quot;&gt;&lt;a href=&quot;#事件的绑定&quot; class=&quot;headerlink&quot; title=&quot;事件的绑定:&quot;&gt;&lt;/a&gt;事件的绑定:&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;对象.事件 = function(){};  &lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;响应函数都会传进一个封装的事件响应对象event&lt;/li&gt;
+&lt;li&gt;event.target,返回事件响应元素&lt;/li&gt;
+&lt;/ul&gt;
+    
+    </summary>
+    
+      <category term="前端" scheme="http://yoursite.com/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+      <category term="JavaScript" scheme="http://yoursite.com/tags/JavaScript/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>JavaScript的函数概念</title>
+    <link href="http://yoursite.com/2019/07/12/JavaScript%E7%9A%84%E5%87%BD%E6%95%B0%E6%A6%82%E5%BF%B5/"/>
+    <id>http://yoursite.com/2019/07/12/JavaScript的函数概念/</id>
+    <published>2019-07-12T07:57:17.000Z</published>
+    <updated>2019-07-12T08:17:51.150Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>本文阐述了Function的声明和调用<br><code>var fun = new Function();</code>  </p></blockquote><a id="more"></a><blockquote><p>function函数也是一个对象,封装一些代码使用typeof检查一个函数时,会返回function  </p></blockquote><h2 id="创建函数"><a href="#创建函数" class="headerlink" title="创建函数:"></a>创建函数:</h2><p><code>var fun = new Function();</code></p><ul><li>封装代码写在括号内  </li></ul><p><code>var fun = new Funvtion(&quot;console.log(&#39;Hello&#39;);&quot;);</code></p><h2 id="声明函数"><a href="#声明函数" class="headerlink" title="声明函数:"></a>声明函数:</h2><ul><li>Function 函数名(形参一,形参二){方法体};  </li></ul><figure class="highlight crystal"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Function <span class="function"><span class="keyword">fun</span>(<span class="title">String</span></span> str,Number i)&#123;</span><br><span class="line">                docunment.write(str,i);</span><br><span class="line">            &#125;</span><br></pre></td></tr></table></figure><h2 id="函数表达式"><a href="#函数表达式" class="headerlink" title="函数表达式:"></a>函数表达式:</h2><ul><li>var 函数名 = Funvtion(形参,形参N){方法体}  </li></ul><figure class="highlight crystal"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var <span class="function"><span class="keyword">fun</span> = <span class="title">Function</span></span> <span class="function"><span class="keyword">fun</span>(<span class="title">String</span></span> str,Number i)&#123;</span><br><span class="line">                docunment.write(str,i);</span><br><span class="line">            &#125;</span><br></pre></td></tr></table></figure><h2 id="return"><a href="#return" class="headerlink" title="return:"></a>return:</h2><ul><li>return后返回并结束函数语句</li><li>return后不写返回值,返回undefined,不写return也返回undefined</li></ul><h2 id="调用函数"><a href="#调用函数" class="headerlink" title="调用函数:"></a>调用函数:</h2><p><code>fun();</code></p><ul><li>调用函数不会检查实参的类型和数量</li><li>多余的实参不会被赋值,实参少于形参,没有对应实参的形参会赋值为undefined</li></ul><h3 id="匿名函数的调用"><a href="#匿名函数的调用" class="headerlink" title="匿名函数的调用:"></a>匿名函数的调用:</h3><figure class="highlight clojure"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">(<span class="name">Function</span>()&#123;</span><br><span class="line">                docunment.write(<span class="string">"匿名函数"</span>)<span class="comment">;</span></span><br><span class="line">            &#125;)()<span class="comment">;</span></span><br></pre></td></tr></table></figure><ul><li>立即执行,只执行一次</li></ul><h2 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h2><blockquote><p>一个函数被对象属性保存,则被称为对象的方法.  </p></blockquote><figure class="highlight fortran"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">obj.<span class="keyword">name</span> = <span class="function"><span class="keyword">Function</span><span class="params">()</span></span>&#123;</span><br><span class="line">            document.<span class="built_in">write</span>(<span class="string">"赋值给对象属性"</span>)</span><br><span class="line">        &#125;;</span><br></pre></td></tr></table></figure><ul><li>函数的call()和apply()方法,可以将对象设置为参数,这样可以将函数中指向的this让对象调用</li></ul><p><code>fun.call(obj);</code></p><ul><li>call(),可以在对象之后以此传递实参</li></ul><p><code>fun.call(obj,1,2);</code></p><ul><li>apply(),需要把实参封装到数组中进行传递</li></ul><p><code>fun.apply(obj,[1,2]);</code></p><ul><li>arguments封装实参,argumens[index]可以访问实参</li></ul>]]></content>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;本文阐述了Function的声明和调用&lt;br&gt;&lt;code&gt;var fun = new Function();&lt;/code&gt;  &lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="前端" scheme="http://yoursite.com/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+      <category term="JavaScript" scheme="http://yoursite.com/tags/JavaScript/"/>
+    
+  </entry>
+  
+  <entry>
     <title>JavaScript对象的概念</title>
     <link href="http://yoursite.com/2019/07/12/JavaScript%E5%AF%B9%E8%B1%A1%E7%9A%84%E6%A6%82%E5%BF%B5/"/>
     <id>http://yoursite.com/2019/07/12/JavaScript对象的概念/</id>
     <published>2019-07-11T17:15:49.000Z</published>
-    <updated>2019-07-11T17:47:41.502Z</updated>
+    <updated>2019-07-12T07:52:50.809Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="一-内建对象"><a href="#一-内建对象" class="headerlink" title="一 内建对象"></a>一 内建对象</h2><blockquote><p>-由es标准定义的对象,再任何es中都可以使用<br>-比如Math String Number Boolean Object</p></blockquote><h2 id="二-宿主对象"><a href="#二-宿主对象" class="headerlink" title="二 宿主对象"></a>二 宿主对象</h2><blockquote><p>-由Js的运行环境提供的对象,目前来讲主要针对浏览器提供的对象-BOM DOM</p></blockquote><h2 id="三-自建对象"><a href="#三-自建对象" class="headerlink" title="三 自建对象"></a>三 自建对象</h2><blockquote><p>-由开发人员自己创建的对象  </p></blockquote><h3 id="创建对象"><a href="#创建对象" class="headerlink" title="创建对象"></a>创建对象</h3><ul><li>使用new关键字创建对象:<br><code>var obj = new Object();</code>  </li><li>字面量创建对象:<br><code>var obj = {};</code>  </li><li>属性名可以不加双引号,特殊字符除外  </li></ul><figure class="highlight nix"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var <span class="attr">obj2</span> = &#123;</span><br><span class="line">            <span class="attr">name</span> = <span class="string">"io"</span>,</span><br><span class="line">            <span class="attr">age</span> = <span class="number">12</span>,</span><br><span class="line">            <span class="attr">about</span> = <span class="string">""</span></span><br><span class="line">        &#125;;</span><br></pre></td></tr></table></figure><a id="more"></a><h3 id="添加属性"><a href="#添加属性" class="headerlink" title="添加属性:"></a>添加属性:</h3><blockquote><p>属性名不强制要求遵守标识符的规则,可任意操作,尽量见名知意:   </p></blockquote><ul><li>语法:对象[“属性名”] = 属性值;</li><li>[]中可以直接传递一个变量,变量的值是多少,属性值就是多少  </li></ul><figure class="highlight abnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var a = <span class="string">"你好"</span><span class="comment">;</span></span><br><span class="line">obj[a]<span class="comment">;</span></span><br><span class="line">obj.name = <span class="string">"大哥大"</span><span class="comment">;</span></span><br><span class="line">obj.age = <span class="number">12</span><span class="comment">;</span></span><br><span class="line">obj[<span class="string">"123"</span>] = <span class="number">321</span><span class="comment">;</span></span><br></pre></td></tr></table></figure><h4 id="获取对象属性"><a href="#获取对象属性" class="headerlink" title="获取对象属性:"></a>获取对象属性:</h4><blockquote><p>没有定义的属性返回undefined  </p></blockquote><p><code>name = obj.name;</code></p><h4 id="删除属性"><a href="#删除属性" class="headerlink" title="删除属性:"></a>删除属性:</h4><p><code>delete obj.name;</code></p><h3 id="属性值"><a href="#属性值" class="headerlink" title="属性值:"></a>属性值:</h3><blockquote><p>可以设置任意数据类型,包括object  </p></blockquote><figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">obj.name</span> = <span class="string">"初音未来"</span><span class="comment">;</span></span><br><span class="line"><span class="attr">obj2.japan</span> = obj<span class="comment">;</span></span><br></pre></td></tr></table></figure><p><strong>japan的值,随着obj.name的变化而变化</strong><br> 使用in运算,检测是否具有某种属性  </p><ul><li>“属性名” in obj;   反参为blooean  </li></ul><h3 id="内存关系"><a href="#内存关系" class="headerlink" title="内存关系"></a>内存关系</h3><p><em>基本数据类型,键值对保存在栈内存中,键值对之间没有直接联系</em><br><em>引用数据类型,保存在堆内存当中,每创建一个对象,就会在堆内存中开辟一个空间用于存储对象内容</em><br><em>对象名对应的是内存地址(对象的引用)</em></p>]]></content>
+    <content type="html"><![CDATA[<blockquote><p>JavaScript中包含内建对象,宿主对象和自建对象三种,本文主要描述自建对象的创建和使用,以及内存的关系.  </p></blockquote><a id="more"></a><h2 id="一-内建对象"><a href="#一-内建对象" class="headerlink" title="一 内建对象"></a>一 内建对象</h2><blockquote><p>-由es标准定义的对象,再任何es中都可以使用<br>-比如Math String Number Boolean Object</p></blockquote><h2 id="二-宿主对象"><a href="#二-宿主对象" class="headerlink" title="二 宿主对象"></a>二 宿主对象</h2><blockquote><p>-由Js的运行环境提供的对象,目前来讲主要针对浏览器提供的对象-BOM DOM</p></blockquote><h2 id="三-自建对象"><a href="#三-自建对象" class="headerlink" title="三 自建对象"></a>三 自建对象</h2><blockquote><p>-由开发人员自己创建的对象  </p></blockquote><h3 id="创建对象"><a href="#创建对象" class="headerlink" title="创建对象"></a>创建对象</h3><ul><li>使用new关键字创建对象:<br><code>var obj = new Object();</code>  </li><li>字面量创建对象:<br><code>var obj = {};</code>  </li><li>属性名可以不加双引号,特殊字符除外  </li></ul><figure class="highlight nix"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var <span class="attr">obj2</span> = &#123;</span><br><span class="line">            <span class="attr">name</span> = <span class="string">"io"</span>,</span><br><span class="line">            <span class="attr">age</span> = <span class="number">12</span>,</span><br><span class="line">            <span class="attr">about</span> = <span class="string">""</span></span><br><span class="line">        &#125;;</span><br></pre></td></tr></table></figure><h3 id="添加属性"><a href="#添加属性" class="headerlink" title="添加属性:"></a>添加属性:</h3><blockquote><p>属性名不强制要求遵守标识符的规则,可任意操作,尽量见名知意:   </p></blockquote><ul><li>语法:对象[“属性名”] = 属性值;</li><li>[]中可以直接传递一个变量,变量的值是多少,属性值就是多少  </li></ul><figure class="highlight abnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var a = <span class="string">"你好"</span><span class="comment">;</span></span><br><span class="line">obj[a]<span class="comment">;</span></span><br><span class="line">obj.name = <span class="string">"大哥大"</span><span class="comment">;</span></span><br><span class="line">obj.age = <span class="number">12</span><span class="comment">;</span></span><br><span class="line">obj[<span class="string">"123"</span>] = <span class="number">321</span><span class="comment">;</span></span><br></pre></td></tr></table></figure><h4 id="获取对象属性"><a href="#获取对象属性" class="headerlink" title="获取对象属性:"></a>获取对象属性:</h4><blockquote><p>没有定义的属性返回undefined  </p></blockquote><p><code>name = obj.name;</code></p><h4 id="删除属性"><a href="#删除属性" class="headerlink" title="删除属性:"></a>删除属性:</h4><p><code>delete obj.name;</code></p><h3 id="属性值"><a href="#属性值" class="headerlink" title="属性值:"></a>属性值:</h3><blockquote><p>可以设置任意数据类型,包括object  </p></blockquote><figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">obj.name</span> = <span class="string">"初音未来"</span><span class="comment">;</span></span><br><span class="line"><span class="attr">obj2.japan</span> = obj<span class="comment">;</span></span><br></pre></td></tr></table></figure><p><strong>japan的值,随着obj.name的变化而变化</strong><br> 使用in运算,检测是否具有某种属性  </p><ul><li>“属性名” in obj;   反参为blooean  </li></ul><h3 id="内存关系"><a href="#内存关系" class="headerlink" title="内存关系"></a>内存关系</h3><p><em>基本数据类型,键值对保存在栈内存中,键值对之间没有直接联系</em><br><em>引用数据类型,保存在堆内存当中,每创建一个对象,就会在堆内存中开辟一个空间用于存储对象内容</em><br><em>对象名对应的是内存地址(对象的引用)</em></p>]]></content>
     
     <summary type="html">
     
-      &lt;h2 id=&quot;一-内建对象&quot;&gt;&lt;a href=&quot;#一-内建对象&quot; class=&quot;headerlink&quot; title=&quot;一 内建对象&quot;&gt;&lt;/a&gt;一 内建对象&lt;/h2&gt;&lt;blockquote&gt;
-&lt;p&gt;-由es标准定义的对象,再任何es中都可以使用&lt;br&gt;-比如Math String Number Boolean Object&lt;/p&gt;
+      &lt;blockquote&gt;
+&lt;p&gt;JavaScript中包含内建对象,宿主对象和自建对象三种,本文主要描述自建对象的创建和使用,以及内存的关系.  &lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;h2 id=&quot;二-宿主对象&quot;&gt;&lt;a href=&quot;#二-宿主对象&quot; class=&quot;headerlink&quot; title=&quot;二 宿主对象&quot;&gt;&lt;/a&gt;二 宿主对象&lt;/h2&gt;&lt;blockquote&gt;
-&lt;p&gt;-由Js的运行环境提供的对象,目前来讲主要针对浏览器提供的对象-BOM DOM&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h2 id=&quot;三-自建对象&quot;&gt;&lt;a href=&quot;#三-自建对象&quot; class=&quot;headerlink&quot; title=&quot;三 自建对象&quot;&gt;&lt;/a&gt;三 自建对象&lt;/h2&gt;&lt;blockquote&gt;
-&lt;p&gt;-由开发人员自己创建的对象  &lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h3 id=&quot;创建对象&quot;&gt;&lt;a href=&quot;#创建对象&quot; class=&quot;headerlink&quot; title=&quot;创建对象&quot;&gt;&lt;/a&gt;创建对象&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;使用new关键字创建对象:&lt;br&gt;&lt;code&gt;var obj = new Object();&lt;/code&gt;  &lt;/li&gt;
-&lt;li&gt;字面量创建对象:&lt;br&gt;&lt;code&gt;var obj = {};&lt;/code&gt;  &lt;/li&gt;
-&lt;li&gt;属性名可以不加双引号,特殊字符除外  &lt;/li&gt;
-&lt;/ul&gt;
-&lt;figure class=&quot;highlight nix&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;var &lt;span class=&quot;attr&quot;&gt;obj2&lt;/span&gt; = &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &lt;span class=&quot;attr&quot;&gt;name&lt;/span&gt; = &lt;span class=&quot;string&quot;&gt;&quot;io&quot;&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &lt;span class=&quot;attr&quot;&gt;age&lt;/span&gt; = &lt;span class=&quot;number&quot;&gt;12&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &lt;span class=&quot;attr&quot;&gt;about&lt;/span&gt; = &lt;span class=&quot;string&quot;&gt;&quot;&quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &amp;#125;;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
     
     </summary>
     
@@ -99,29 +341,24 @@
     <link href="http://yoursite.com/2019/07/11/JS%E7%AE%80%E5%8D%95%E7%9A%84%E9%BC%A0%E6%A0%87%E8%B7%9F%E9%9A%8F%E4%BA%8B%E4%BB%B6%E6%80%9D%E8%B7%AF/"/>
     <id>http://yoursite.com/2019/07/11/JS简单的鼠标跟随事件思路/</id>
     <published>2019-07-11T14:13:05.000Z</published>
-    <updated>2019-07-11T15:55:13.098Z</updated>
+    <updated>2019-07-12T08:45:06.801Z</updated>
     
-    <content type="html"><![CDATA[<blockquote><p>简单的实现:设置一个方块,当鼠标移入窗口时,方块跟随鼠标,当鼠标移出时方块消失,提供思路,方块可替换素材</p></blockquote><p><strong>设置方块</strong>  </p><figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-id">#box1</span> &#123;</span><br><span class="line"><span class="attribute">width</span>: <span class="number">20px</span>;</span><br><span class="line"><span class="attribute">height</span>: <span class="number">20px</span>;</span><br><span class="line"><span class="attribute">position</span>: absolute;<span class="comment">//需要绝对定位方块才能移动</span></span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure><p><strong>获得方块和body</strong></p><figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> box = <span class="built_in">document</span>.getElementById(<span class="string">"box1"</span>);</span><br><span class="line"><span class="keyword">var</span> bodywindow = <span class="built_in">document</span>.documentElement;</span><br></pre></td></tr></table></figure><p><strong>给body设置鼠标移入事件</strong></p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">bodywindow.onmousemove = <span class="function"><span class="keyword">function</span> (<span class="params">event</span>) </span>&#123;</span><br><span class="line">event = event || <span class="built_in">window</span>.event;</span><br><span class="line"><span class="comment">//pageX,pageY当对于页面的坐标,不兼容ie8</span></span><br><span class="line"><span class="comment">// var x = event.pageX;</span></span><br><span class="line"><span class="comment">// var y = event.pageY;</span></span><br><span class="line"><span class="comment">//由于浏览器不一样,认定的父元素不一致,所以需要这种方式获得父元素并获得滚动坐标</span></span><br><span class="line"><span class="keyword">var</span> st = <span class="built_in">document</span>.body.scrollTop || <span class="built_in">document</span>.documentElement.scrollTop;</span><br><span class="line"><span class="keyword">var</span> sl = <span class="built_in">document</span>.body.scrollLeft || <span class="built_in">document</span>.documentElement.scrollLeft;</span><br><span class="line"><span class="comment">//设置偏移量,使用event封装的对象获得属性并且拼串获得string</span></span><br><span class="line">box.style.left = event.clientX + sl + <span class="string">"px"</span>;</span><br><span class="line">box.style.top = event.clientY + st + <span class="string">"px"</span>;</span><br><span class="line">box.style.backgroundColor = <span class="string">"aqua"</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p><strong>设置鼠标移出事件</strong></p><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">bodywindow<span class="selector-class">.onmouseout</span> = function () &#123;</span><br><span class="line">                box<span class="selector-class">.style</span><span class="selector-class">.backgroundColor</span> = <span class="string">"white"</span></span><br><span class="line">            &#125;</span><br></pre></td></tr></table></figure><p><strong>效果展示</strong><br><img src="https://s2.ax1x.com/2019/07/11/ZRRvQI.gif" alt></p>]]></content>
+    <content type="html"><![CDATA[<blockquote><p>简单的实现:设置一个方块,当鼠标移入窗口时,方块跟随鼠标,当鼠标移出时方块消失,提供思路,方块可替换素材<br><img src="https://s2.ax1x.com/2019/07/11/ZRRvQI.gif" alt></p></blockquote><a id="more"></a><p><strong>设置方块</strong>  </p><figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-id">#box1</span> &#123;</span><br><span class="line"><span class="attribute">width</span>: <span class="number">20px</span>;</span><br><span class="line"><span class="attribute">height</span>: <span class="number">20px</span>;</span><br><span class="line"><span class="attribute">position</span>: absolute;<span class="comment">//需要绝对定位方块才能移动</span></span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure><p><strong>获得方块和body</strong></p><figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> box = <span class="built_in">document</span>.getElementById(<span class="string">"box1"</span>);</span><br><span class="line"><span class="keyword">var</span> bodywindow = <span class="built_in">document</span>.documentElement;</span><br></pre></td></tr></table></figure><p><strong>给body设置鼠标移入事件</strong></p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">bodywindow.onmousemove = <span class="function"><span class="keyword">function</span> (<span class="params">event</span>) </span>&#123;</span><br><span class="line">event = event || <span class="built_in">window</span>.event;</span><br><span class="line"><span class="comment">//pageX,pageY当对于页面的坐标,不兼容ie8</span></span><br><span class="line"><span class="comment">// var x = event.pageX;</span></span><br><span class="line"><span class="comment">// var y = event.pageY;</span></span><br><span class="line"><span class="comment">//由于浏览器不一样,认定的父元素不一致,所以需要这种方式获得父元素并获得滚动坐标</span></span><br><span class="line"><span class="keyword">var</span> st = <span class="built_in">document</span>.body.scrollTop || <span class="built_in">document</span>.documentElement.scrollTop;</span><br><span class="line"><span class="keyword">var</span> sl = <span class="built_in">document</span>.body.scrollLeft || <span class="built_in">document</span>.documentElement.scrollLeft;</span><br><span class="line"><span class="comment">//设置偏移量,使用event封装的对象获得属性并且拼串获得string</span></span><br><span class="line">box.style.left = event.clientX + sl + <span class="string">"px"</span>;</span><br><span class="line">box.style.top = event.clientY + st + <span class="string">"px"</span>;</span><br><span class="line">box.style.backgroundColor = <span class="string">"aqua"</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p><strong>设置鼠标移出事件</strong></p><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">bodywindow<span class="selector-class">.onmouseout</span> = function () &#123;</span><br><span class="line">                box<span class="selector-class">.style</span><span class="selector-class">.backgroundColor</span> = <span class="string">"white"</span></span><br><span class="line">            &#125;</span><br></pre></td></tr></table></figure><p><strong>效果展示</strong><br><img src="https://s2.ax1x.com/2019/07/11/ZRRvQI.gif" alt></p>]]></content>
     
     <summary type="html">
     
-      
-      
-        &lt;blockquote&gt;
-&lt;p&gt;简单的实现:设置一个方块,当鼠标移入窗口时,方块跟随鼠标,当鼠标移出时方块消失,提供思路,方块可替换素材&lt;/p&gt;
+      &lt;blockquote&gt;
+&lt;p&gt;简单的实现:设置一个方块,当鼠标移入窗口时,方块跟随鼠标,当鼠标移出时方块消失,提供思路,方块可替换素材&lt;br&gt;&lt;img src=&quot;https://s2.ax1x.com/2019/07/11/ZRRvQI.gif&quot; alt&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&lt;strong&gt;设置方块&lt;/strong&gt;  &lt;/p&gt;
-&lt;figure class=&quot;highlig
-      
     
     </summary>
     
       <category term="前端" scheme="http://yoursite.com/categories/%E5%89%8D%E7%AB%AF/"/>
     
     
-      <category term="JavaScript" scheme="http://yoursite.com/tags/JavaScript/"/>
+      <category term="Demo" scheme="http://yoursite.com/tags/Demo/"/>
     
-      <category term="鼠标事件" scheme="http://yoursite.com/tags/%E9%BC%A0%E6%A0%87%E4%BA%8B%E4%BB%B6/"/>
+      <category term="JavaScript" scheme="http://yoursite.com/tags/JavaScript/"/>
     
   </entry>
   

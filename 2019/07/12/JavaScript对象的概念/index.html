@@ -84,18 +84,18 @@
 
 
 
-<meta name="description" content="一 内建对象 -由es标准定义的对象,再任何es中都可以使用-比如Math String Number Boolean Object  二 宿主对象 -由Js的运行环境提供的对象,目前来讲主要针对浏览器提供的对象-BOM DOM  三 自建对象 -由开发人员自己创建的对象    创建对象 使用new关键字创建对象:var obj = new Object();   字面量创建对象:var obj">
+<meta name="description" content="JavaScript中包含内建对象,宿主对象和自建对象三种,本文主要描述自建对象的创建和使用,以及内存的关系.">
 <meta name="keywords" content="JavaScript">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JavaScript对象的概念">
 <meta property="og:url" content="http://yoursite.com/2019/07/12/JavaScript对象的概念/index.html">
 <meta property="og:site_name" content="执迷">
-<meta property="og:description" content="一 内建对象 -由es标准定义的对象,再任何es中都可以使用-比如Math String Number Boolean Object  二 宿主对象 -由Js的运行环境提供的对象,目前来讲主要针对浏览器提供的对象-BOM DOM  三 自建对象 -由开发人员自己创建的对象    创建对象 使用new关键字创建对象:var obj = new Object();   字面量创建对象:var obj">
+<meta property="og:description" content="JavaScript中包含内建对象,宿主对象和自建对象三种,本文主要描述自建对象的创建和使用,以及内存的关系.">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-07-11T17:47:41.502Z">
+<meta property="og:updated_time" content="2019-07-12T07:52:50.809Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JavaScript对象的概念">
-<meta name="twitter:description" content="一 内建对象 -由es标准定义的对象,再任何es中都可以使用-比如Math String Number Boolean Object  二 宿主对象 -由Js的运行环境提供的对象,目前来讲主要针对浏览器提供的对象-BOM DOM  三 自建对象 -由开发人员自己创建的对象    创建对象 使用new关键字创建对象:var obj = new Object();   字面量创建对象:var obj">
+<meta name="twitter:description" content="JavaScript中包含内建对象,宿主对象和自建对象三种,本文主要描述自建对象的创建和使用,以及内存的关系.">
 
 
 
@@ -383,7 +383,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  395
+                  437
                 </span>
               
 
@@ -420,7 +420,11 @@
       
 
       
-        <h2 id="一-内建对象"><a href="#一-内建对象" class="headerlink" title="一 内建对象"></a>一 内建对象</h2><blockquote>
+        <blockquote>
+<p>JavaScript中包含内建对象,宿主对象和自建对象三种,本文主要描述自建对象的创建和使用,以及内存的关系.  </p>
+</blockquote>
+<a id="more"></a>
+<h2 id="一-内建对象"><a href="#一-内建对象" class="headerlink" title="一 内建对象"></a>一 内建对象</h2><blockquote>
 <p>-由es标准定义的对象,再任何es中都可以使用<br>-比如Math String Number Boolean Object</p>
 </blockquote>
 <h2 id="二-宿主对象"><a href="#二-宿主对象" class="headerlink" title="二 宿主对象"></a>二 宿主对象</h2><blockquote>
@@ -435,9 +439,6 @@
 <li>属性名可以不加双引号,特殊字符除外  </li>
 </ul>
 <figure class="highlight nix"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var <span class="attr">obj2</span> = &#123;</span><br><span class="line">            <span class="attr">name</span> = <span class="string">"io"</span>,</span><br><span class="line">            <span class="attr">age</span> = <span class="number">12</span>,</span><br><span class="line">            <span class="attr">about</span> = <span class="string">""</span></span><br><span class="line">        &#125;;</span><br></pre></td></tr></table></figure>
-
-<a id="more"></a>
-
 
 <h3 id="添加属性"><a href="#添加属性" class="headerlink" title="添加属性:"></a>添加属性:</h3><blockquote>
 <p>属性名不强制要求遵守标识符的规则,可任意操作,尽量见名知意:   </p>
@@ -502,6 +503,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/07/12/JavaScript的函数概念/" rel="prev" title="JavaScript的函数概念">
+                JavaScript的函数概念 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -608,7 +613,7 @@ var jiathis_config={
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-count">15</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -630,7 +635,7 @@ var jiathis_config={
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-count">8</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -703,7 +708,7 @@ var jiathis_config={
     <h3 class="widget-title"></h3>
     <div id="myCanvasContainer" class="widget tagcloud">
         <canvas width="250" height="250" id="resCanvas" style="width=100%">
-            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css/">css</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github/">github</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html/">html</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/表单/">表单</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/鼠标事件/">鼠标事件</a><span class="tag-list-count">1</span></li></ul>
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Demo/">Demo</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/H5/">H5</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css/">css</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github/">github</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html/">html</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/表单/">表单</a><span class="tag-list-count">1</span></li></ul>
         </canvas>
     </div>
 </div>

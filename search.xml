@@ -1,9 +1,110 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[H5设置全屏]]></title>
+    <url>%2F2019%2F07%2F12%2FH5%E8%AE%BE%E7%BD%AE%E5%85%A8%E5%B1%8F%2F</url>
+    <content type="text"><![CDATA[本文简单的以H5的API设置一个全屏的Demo requestFullScreen() 开启全屏显示不同浏览器加不同前缀 Chrome:webkit firefox:moz ie:ms opera:o cancelFullScreen 退出全屏,必须使用document操作fullScreenElement 是否全屏状态,使用document操作 首先设置一张图片,三个按钮,分别全屏,退出,和检查是否全屏 123456&lt;div id="div"&gt; &lt;img src="../web/02/img/img1.jpg"&gt; &lt;button type="button" id="bt1"&gt;全屏&lt;/button&gt; &lt;button type="button" id="bt2"&gt;退出&lt;/button&gt; &lt;button type="button" id="bt3"&gt;检查&lt;/button&gt;&lt;/&lt;div&gt; 给第一个按钮绑定时间,使imgdiv全屏显示: 12345678910111213var imgdiv = document.getElementById("div");document.querySelector("#bt1").onclick = function() &#123; // 解决兼容性问题 if (imgdiv.mozRequestFullScreen) &#123; imgdiv.mozRequestFullScreen(); &#125; else if (imgdiv.webkitRequestFullScreen) &#123; imgdiv.webkitRequestFullScreen(); &#125; else if (imgdiv.msRequestFullScreen) &#123; imgdiv.msRequestFullScreen(); &#125; else if (imgdiv.oRequestFullScreen) &#123; imgdiv.oRequestFullScreen(); &#125; &#125; 给第二个按钮绑定事件,取消imgdiv的全屏显示 1234567891011document.querySelector("#bt2").onclick = function() &#123; if (document.mozCancelFullScreen) &#123; document.mozCancelFullScreen(); &#125; else if (document.webkitCancelFullScreen) &#123; document.webkitCancelFullScreen(); &#125; else if (document.msCancelFullScreen) &#123; document.msCancelFullScreen(); &#125; else if (document.oCancelFullScreen) &#123; document.oCancelFullScreen(); &#125; &#125; 给第三个按钮绑定事件,检测现在是否全屏 12345678document.querySelector("#bt3").onclick = function() &#123; if (document.fullScreenElement || document.webkitFullscreenElement || document.msFullScreenElement || document.oFullScreenElement || document.mozFullScreenElement) &#123; alert("全屏"); &#125;else&#123; alert("正常"); &#125; &#125;]]></content>
+      <categories>
+        <category>前端</category>
+      </categories>
+      <tags>
+        <tag>H5</tag>
+        <tag>Demo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[canvas]]></title>
+    <url>%2F2019%2F07%2F12%2Fcanvas%2F</url>
+    <content type="text"><![CDATA[本文主要讲述了H5的canvas标签的使用,关于画布和绘画 画布的创建 使用canvas标签初始化画布 &lt;canvas id=&quot;myCanvas&quot;&gt;&lt;/canvas&gt; 在css中设置边框方便查看 123#myCanvas&#123; border: #FFFF00 groove 2px; &#125; 在JavaScript中动态获取或者设置画布大小 12myCanvas.width = 500;//js里设置宽高,直接使用idmyCanvas.height = 500; 绘画需要在Js中获得canvas元素 12var mv = document.getElementById("myCanvas");var cva = mv.getContext("2d"); fileRect方形开始绘画时设置颜色和起始位置和大小 第一个0是x 第二个0是y 80是width 100是height fillStyle设置颜色 fillRect设置位置和大小 12cva.fillStyle = "aqua"//颜色cva.fillRect(0,0,80,100);//位置大小 由此画出一个长方形: 无填充色12cva.strokeStyle = "#FFFF00";//无填充色,同时也是线条的颜色cva.strokeRect(100,100,80,100);//无填充色定位 绘画重新开始时,需要重置样式和路径12cva.beginPath();//重置当前路径点,清除样式cva.closePath();//关闭路径点,起始和结束闭合 直线绘画 moveTo设置起点位置 lineTo设置到达位置 fill开始绘画填充 1234567cva.moveTo(20,100);cva.lineTo(100,100);cva.lineTo(100,200);cva.lineTo(20,200);cva.lineTo(20,100);cva.fillStyle = "#0000FF";//填充颜色cva.fill();//填充开始 圆形绘画context.arc(x,y,r,sAngle,eAngle,counterclockwise); x:横向坐标 y纵向坐标 r半径 sAngle起始点 eAngle结束点 counterclockwise绘制方向 false顺时针 true逆时针 123cva.beginPath();cva.arc(300,250,50,0,2*Math.PI,false);cva.stroke();]]></content>
+      <categories>
+        <category>前端</category>
+      </categories>
+      <tags>
+        <tag>H5</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[H5表单新增属性]]></title>
+    <url>%2F2019%2F07%2F12%2FH5%E8%A1%A8%E5%8D%95%E6%96%B0%E5%A2%9E%E5%B1%9E%E6%80%A7%2F</url>
+    <content type="text"><![CDATA[本文列举了H5表单新增的属性和使用方法 placeholder = “” 设置提示 autofocus 直接使用没有值，设置此属性的元素获得焦点 autocomplete=”on” 自动提示 on开启，off关闭,1.已有成功提交的值,2.当前元素有name属性 1234用户名：&lt;input type="text" name="userName" placeholder="请输入您的昵称" autofocus="autofocus" autocomplete="on" /&gt; required设置此属性的元素必须填写，没有输入则阻止当前提交 pattern=””正则验证 123手机号：&lt;input type="tel" name="userPhone" required placeholder="11位数字手机号码" pattern="^(\+86)?1\d&#123;10&#125;$" /&gt; multiple属性设置当前元素可以多选,可以设置多邮箱 文件:&lt;input type=&quot;file&quot; name=&quot;userFile&quot; multiple /&gt; list,datalist设置可以输入的下拉选择框 label设置提示文字 1234567&lt;input type="text" name="userGame" list="data" /&gt; &lt;datalist name = "userGameOf" id="data"&gt; &lt;option value ="刺客信条" &gt;&lt;/option&gt; &lt;option value ="赛博朋克2077" label="等到下辈子" &gt;&lt;/option&gt; &lt;option value ="巫师3" label="救救CDPR吧" &gt;&lt;/option&gt; &lt;option value ="狂怒2" label="爽爽爽!" &gt;&lt;/option&gt; &lt;/datalist&gt; form= “”值为需要同步提交的form的id，首先多个分栏同步提交 您的建议：&lt;input type=&quot;text&quot; name=&quot;userText&quot; form=&quot;form1&quot; /&gt;]]></content>
+      <categories>
+        <category>前端</category>
+      </categories>
+      <tags>
+        <tag>H5</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[H5表单新增type值]]></title>
+    <url>%2F2019%2F07%2F12%2FH5%E8%A1%A8%E5%8D%95%E6%96%B0%E5%A2%9Etype%E5%80%BC%2F</url>
+    <content type="text"><![CDATA[本文主要列举了H5新增的表单Type的值,设定特殊的表单元素 “email” 验证邮箱，需要满足要求才能提交 邮箱:&lt;input type=&quot;email&quot;/&gt; “tel” 并不是验证号码，而是在移动端打开数字键盘，限制用户只能输入数字 电话:&lt;input type=&quot;tel&quot;/&gt; “file” 上传文件 multiple属性可以设置多选 文件:&lt;input type=&quot;file&quot; name=&quot;userFile&quot; multiple /&gt; “url” 验证网址，合法网址必要包含http://才能提交 链接:&lt;input type=&quot;url&quot;value=&quot;http://&quot; /&gt; “number” 只能输入数字包含小数点，可以手动增加减少，常用购物车商品数量 max最大值 min最小值 value默认值 数字:&lt;input type=&quot;number&quot;/&gt; “search” 常用语搜索 搜索:&lt;input type=&quot;search&quot;/&gt; “range” 设置范围 max最大值 min最小值 value默认值（默认为一半） 数值:&lt;input type=&quot;range&quot; value=&quot;90&quot; /&gt; “color” 设置颜色 #开始，包含16进制格式的颜色值。例如：#FF0000为红色的16进制值。 颜色:&lt;input type=&quot;color&quot; value=&quot;#ff0000&quot;/&gt; “time” 设置时间,时分秒,由于各浏览器实现方式不同,不推荐 时间:&lt;input type=&quot;time&quot;/&gt;&lt;br&gt; “date” 设置年份 年月日 年份:&lt;input type=&quot;date&quot;/&gt;&lt;br&gt; “datetime-local” 设置年月日时分秒 时间集合:&lt;input type=&quot;datetime-local&quot;/&gt;]]></content>
+      <categories>
+        <category>前端</category>
+      </categories>
+      <tags>
+        <tag>H5</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[H5的多媒体]]></title>
+    <url>%2F2019%2F07%2F12%2FH5%E7%9A%84%E5%A4%9A%E5%AA%92%E4%BD%93%2F</url>
+    <content type="text"><![CDATA[本文主要介绍H5中新增的音频视频标签 audio音频:12&lt;audio src="../MP3/AKB48%20(エーケービー%20フォーティエイト)%20-%20梦を死なせるわけにいかない%20(不要让梦想死去).mp3" controls="controls" autoplay="autoplay" loop="loop" muted &gt;&lt;/audio&gt; controls控制面板，设置才会出现播放界面，否则不可见 muted静音，最新浏览器设置了静音后才能自动播放 autoplay自动播放,移动端不支持 loop循环播放 JavaScript的api方法: play()播放 pause()暂停播放 video视频:123&lt;video controls &gt; &lt;source src="https://media.st.dl.bscstorage.net/steam/apps/256749663/movie480.webm?t=1556895640" type="video/webm"&gt;&lt;/video&gt; 为浏览器适配合适的文件格式使用source标签，src指向文件，需要填写type值，指向同一个文件的多个格式使用多个source controls控制面板，设置才会出现播放界面，否则不可见 muted静音，最新浏览器设置了静音后才能自动播放 autoplay自动播放,移动端不支持 loop循环播放 poster设置没有播放时显示的画面 width宽度height高度一般只设置一个，自动缩放]]></content>
+      <categories>
+        <category>前端</category>
+      </categories>
+      <tags>
+        <tag>H5</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[获取浏览器信息]]></title>
+    <url>%2F2019%2F07%2F12%2F%E8%8E%B7%E5%8F%96%E6%B5%8F%E8%A7%88%E5%99%A8%E4%BF%A1%E6%81%AF%2F</url>
+    <content type="text"><![CDATA[//userAgent获取浏览器信息,返回字符串 123456789if (/firefox/i.test(navigator.userAgent)) &#123; alert("火狐"); &#125; else if (/chrome/i.test(navigator.userAgent)) &#123; alert("chrome"); &#125; else if (/msie/i.test(navigator.userAgent)) &#123; alert("ie9-"); &#125; else if (ActiveXObject in window) &#123; alert("ie"); &#125;]]></content>
+      <categories>
+        <category>前端</category>
+      </categories>
+      <tags>
+        <tag>JavaScript</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[JavaScript实现简单的键盘移动]]></title>
+    <url>%2F2019%2F07%2F12%2FJavaScript%E5%AE%9E%E7%8E%B0%E7%AE%80%E5%8D%95%E7%9A%84%E9%94%AE%E7%9B%98%E7%A7%BB%E5%8A%A8%2F</url>
+    <content type="text"><![CDATA[用JavaScript实现键盘方向键控制移动 onkeydown 某个键被按下 onkeyup某个键被松开 event.keycode返回按键编码 获取方块元素:var box1 = document.getElementById(&quot;box1&quot;); 设置初始速度和初始化方向 12var spane = 10;//初始速度var go = 0;//初始化方向 绑定onkeydown事件获得按键编码 1234567document.onkeydown = function (event) &#123; event = event || window.event; //是否按下ctrl键,按住了速度+1,没有按住速度等于10 event.ctrlKey ? spane += 1 : spane = 10; // 测试时用alert(event.keyCode);获得数值 go = event.keyCode;//获得方向按键编码 &#125; 调用定时器,在定时器里通过方面编码给方块设置style属性实现位移 1234567891011121314151617var tmer1 = setInterval(function () &#123; switch (go) &#123; case 37: box1.style.left = box1.offsetLeft - spane + "px"; break; case 38: box1.style.top = box1.offsetTop - spane + "px"; break; case 39: box1.style.left = box1.offsetLeft + spane + "px"; break; case 40: box1.style.top = box1.offsetTop + spane + "px" break; clearInterval(tmer1); &#125; &#125;, 30); 完成.]]></content>
+      <categories>
+        <category>前端</category>
+      </categories>
+      <tags>
+        <tag>Demo</tag>
+        <tag>JavaScript</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[JavaScript事件的绑定]]></title>
+    <url>%2F2019%2F07%2F12%2FJavaScript%E4%BA%8B%E4%BB%B6%E7%9A%84%E7%BB%91%E5%AE%9A%2F</url>
+    <content type="text"><![CDATA[本文阐述了原生JavaScript事件的绑定和增加绑定以及兼容方式 事件的绑定: 对象.事件 = function(){}; 响应函数都会传进一个封装的事件响应对象event event.target,返回事件响应元素 123bodywindow.onmousemove = function (event) &#123; alert("鼠标移入了"); &#125; 会被相同的事件重置 解决重置: 对象.addEventListener(“-on事件”,回调函数,是否捕获时执行布尔值); 123bun.addEventListener("click", function () &#123; alert(1); &#125;, false); ie8以下不支持 ie8以下可以使用对象.attachEvent(“事件”,回调函数);-后绑定先执行 123obj.attachEvent(onmousemove,function()&#123; callback.call(obj); &#125;) 兼容方式:123456789function bing(obj,clickstr,callback)&#123; if(obj.addEventListener)&#123; obj.addEventListener(clickstr,callback,false); &#125;else&#123; obj.attachEvent("on"+clickstr,function()&#123; callback.call(obj); &#125;); &#125; &#125;]]></content>
+      <categories>
+        <category>前端</category>
+      </categories>
+      <tags>
+        <tag>JavaScript</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[JavaScript的函数概念]]></title>
+    <url>%2F2019%2F07%2F12%2FJavaScript%E7%9A%84%E5%87%BD%E6%95%B0%E6%A6%82%E5%BF%B5%2F</url>
+    <content type="text"><![CDATA[本文阐述了Function的声明和调用var fun = new Function(); function函数也是一个对象,封装一些代码使用typeof检查一个函数时,会返回function 创建函数:var fun = new Function(); 封装代码写在括号内 var fun = new Funvtion(&quot;console.log(&#39;Hello&#39;);&quot;); 声明函数: Function 函数名(形参一,形参二){方法体}; 123Function fun(String str,Number i)&#123; docunment.write(str,i); &#125; 函数表达式: var 函数名 = Funvtion(形参,形参N){方法体} 123var fun = Function fun(String str,Number i)&#123; docunment.write(str,i); &#125; return: return后返回并结束函数语句 return后不写返回值,返回undefined,不写return也返回undefined 调用函数:fun(); 调用函数不会检查实参的类型和数量 多余的实参不会被赋值,实参少于形参,没有对应实参的形参会赋值为undefined 匿名函数的调用:123(Function()&#123; docunment.write("匿名函数"); &#125;)(); 立即执行,只执行一次 方法 一个函数被对象属性保存,则被称为对象的方法. 123obj.name = Function()&#123; document.write("赋值给对象属性") &#125;; 函数的call()和apply()方法,可以将对象设置为参数,这样可以将函数中指向的this让对象调用 fun.call(obj); call(),可以在对象之后以此传递实参 fun.call(obj,1,2); apply(),需要把实参封装到数组中进行传递 fun.apply(obj,[1,2]); arguments封装实参,argumens[index]可以访问实参]]></content>
+      <categories>
+        <category>前端</category>
+      </categories>
+      <tags>
+        <tag>JavaScript</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[JavaScript对象的概念]]></title>
     <url>%2F2019%2F07%2F12%2FJavaScript%E5%AF%B9%E8%B1%A1%E7%9A%84%E6%A6%82%E5%BF%B5%2F</url>
-    <content type="text"><![CDATA[一 内建对象 -由es标准定义的对象,再任何es中都可以使用-比如Math String Number Boolean Object 二 宿主对象 -由Js的运行环境提供的对象,目前来讲主要针对浏览器提供的对象-BOM DOM 三 自建对象 -由开发人员自己创建的对象 创建对象 使用new关键字创建对象:var obj = new Object(); 字面量创建对象:var obj = {}; 属性名可以不加双引号,特殊字符除外 12345var obj2 = &#123; name = "io", age = 12, about = "" &#125;; 添加属性: 属性名不强制要求遵守标识符的规则,可任意操作,尽量见名知意: 语法:对象[“属性名”] = 属性值; []中可以直接传递一个变量,变量的值是多少,属性值就是多少 12345var a = "你好";obj[a];obj.name = "大哥大";obj.age = 12;obj["123"] = 321; 获取对象属性: 没有定义的属性返回undefined name = obj.name; 删除属性:delete obj.name; 属性值: 可以设置任意数据类型,包括object 12obj.name = "初音未来";obj2.japan = obj; japan的值,随着obj.name的变化而变化 使用in运算,检测是否具有某种属性 “属性名” in obj; 反参为blooean 内存关系基本数据类型,键值对保存在栈内存中,键值对之间没有直接联系引用数据类型,保存在堆内存当中,每创建一个对象,就会在堆内存中开辟一个空间用于存储对象内容对象名对应的是内存地址(对象的引用)]]></content>
+    <content type="text"><![CDATA[JavaScript中包含内建对象,宿主对象和自建对象三种,本文主要描述自建对象的创建和使用,以及内存的关系. 一 内建对象 -由es标准定义的对象,再任何es中都可以使用-比如Math String Number Boolean Object 二 宿主对象 -由Js的运行环境提供的对象,目前来讲主要针对浏览器提供的对象-BOM DOM 三 自建对象 -由开发人员自己创建的对象 创建对象 使用new关键字创建对象:var obj = new Object(); 字面量创建对象:var obj = {}; 属性名可以不加双引号,特殊字符除外 12345var obj2 = &#123; name = "io", age = 12, about = "" &#125;; 添加属性: 属性名不强制要求遵守标识符的规则,可任意操作,尽量见名知意: 语法:对象[“属性名”] = 属性值; []中可以直接传递一个变量,变量的值是多少,属性值就是多少 12345var a = "你好";obj[a];obj.name = "大哥大";obj.age = 12;obj["123"] = 321; 获取对象属性: 没有定义的属性返回undefined name = obj.name; 删除属性:delete obj.name; 属性值: 可以设置任意数据类型,包括object 12obj.name = "初音未来";obj2.japan = obj; japan的值,随着obj.name的变化而变化 使用in运算,检测是否具有某种属性 “属性名” in obj; 反参为blooean 内存关系基本数据类型,键值对保存在栈内存中,键值对之间没有直接联系引用数据类型,保存在堆内存当中,每创建一个对象,就会在堆内存中开辟一个空间用于存储对象内容对象名对应的是内存地址(对象的引用)]]></content>
       <categories>
         <category>前端</category>
       </categories>
@@ -30,8 +131,8 @@
         <category>前端</category>
       </categories>
       <tags>
+        <tag>Demo</tag>
         <tag>JavaScript</tag>
-        <tag>鼠标事件</tag>
       </tags>
   </entry>
   <entry>
