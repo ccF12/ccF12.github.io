@@ -1718,7 +1718,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #6fb0d4;
+  background: #1857ff;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2588,11 +2588,28 @@ body {
   margin-bottom: 60px;
   background: rgba(255,255,255,0.5);
   padding: 25px;
-  -webkit-box-shadow: 0 0 5px rgba(202,203,203,0.7);
-  -moz-box-shadow: 0 0 5px rgba(202,203,204,0.5);
+  -webkit-box-shadow: 1px 1px 5px rgba(202,203,203,0.9);
+  -moz-box-shadow: 1px 1px 5px rgba(202,203,204,0.5);
+}
+.posts-expand .post-body {
+  text-align: center;
+}
+.posts-expand .post-title {
+  margin-bottom: 40px;
+}
+.brand {
+  background-image: url("../../images/apple-touch-icon-next.ico");
+  background: rgba(0,0,0,0);
+}
+.site-title {
+  font-size: 0px;
+}
+.site-subtitle {
+  font-size: 24px;
+  color: #000;
 }
 .main-inner {
-  width: 1200px;
+  width: 1000px;
 }
 @media only screen and (max-width: 700px) {
   .post {
