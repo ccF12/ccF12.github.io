@@ -4,7 +4,7 @@
 
 # Site
 title: 执迷
-subtitle: 如果微不足道的话，我就做追梦的蚂蚁
+subtitle: 微不足道的话，就做追梦的蚂蚁
 description: 
 keywords:
 author: 陈超凡
@@ -41,7 +41,7 @@ future: true
 highlight:
   enable: true
   line_number: true
-  auto_detect: false
+  auto_detect: true
   tab_replace:
 # Home page setting
 # path: Root path for your blogs index page. (default = '')
@@ -72,6 +72,14 @@ pagination_dir: page
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
 theme: next
+
+# hexo-tag-cloud
+tag_cloud:
+    textFont: Trebuchet MS, Helvetica
+    textColor: '#333'
+    textHeight: 25
+    outlineColor: '#E2E1D1'
+    maxSpeed: 0.1 
 
 search:
   path: search.xml
