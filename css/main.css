@@ -1718,7 +1718,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #1857ff;
+  background: #63fe0f;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2598,10 +2598,10 @@ body {
   margin-bottom: 40px;
 }
 .brand {
-  background-image: url("../../images/apple-touch-icon-next.ico");
   background: rgba(0,0,0,0);
 }
 .site-title {
+  background-image: url("../../images/apple-touch-icon-next.ico");
   font-size: 0px;
 }
 .site-subtitle {

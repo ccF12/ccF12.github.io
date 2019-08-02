@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-07-12T13:07:14.196Z</updated>
+  <updated>2019-08-02T13:00:40.153Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>个人照片,微修人像</title>
+    <link href="http://yoursite.com/2019/08/02/%E4%B8%AA%E4%BA%BA%E7%85%A7%E7%89%87-%E5%BE%AE%E4%BF%AE%E4%BA%BA%E5%83%8F/"/>
+    <id>http://yoursite.com/2019/08/02/个人照片-微修人像/</id>
+    <published>2019-08-02T10:34:39.000Z</published>
+    <updated>2019-08-02T13:00:40.153Z</updated>
+    
+    <content type="html"><![CDATA[<p><strong>本文展示了个人人像摄影的一些作品,使用lr对颜色微调,使用ps对人物进行维修,尽量保持照片的本质.</strong></p><h2 id><a href="#" class="headerlink" title></a><img src="https://s2.ax1x.com/2019/08/02/e0c4ts.jpg" alt></h2><h2 id="-1"><a href="#-1" class="headerlink" title></a><img src="https://s2.ax1x.com/2019/08/02/e0cT10.jpg" alt></h2><a id="more"></a><h2 id="-2"><a href="#-2" class="headerlink" title></a><img src="https://s2.ax1x.com/2019/08/02/e0c7cV.jpg" alt></h2><h2 id="-3"><a href="#-3" class="headerlink" title></a><img src="https://s2.ax1x.com/2019/08/02/e0c5hn.jpg" alt></h2><h2 id="-4"><a href="#-4" class="headerlink" title></a><img src="https://s2.ax1x.com/2019/08/02/e0chkj.jpg" alt></h2><h2 id="-5"><a href="#-5" class="headerlink" title></a><img src="https://s2.ax1x.com/2019/08/02/e0cHXT.jpg" alt></h2><h2 id="-6"><a href="#-6" class="headerlink" title></a><img src="https://s2.ax1x.com/2019/08/02/e0cqnU.jpg" alt></h2><h2 id="-7"><a href="#-7" class="headerlink" title></a><img src="https://s2.ax1x.com/2019/08/02/e0cLBF.jpg" alt></h2><h2 id="-8"><a href="#-8" class="headerlink" title></a><img src="https://s2.ax1x.com/2019/08/02/e0cvN9.jpg" alt></h2><h2 id="-9"><a href="#-9" class="headerlink" title></a><img src="https://s2.ax1x.com/2019/08/02/e0gS91.jpg" alt></h2><h2 id="-10"><a href="#-10" class="headerlink" title></a><img src="https://s2.ax1x.com/2019/08/02/e0gp1x.jpg" alt></h2><h2 id="-11"><a href="#-11" class="headerlink" title></a><img src="https://s2.ax1x.com/2019/08/02/e0gCjK.jpg" alt></h2><h2 id="-12"><a href="#-12" class="headerlink" title></a><img src="https://s2.ax1x.com/2019/08/02/e0ginO.jpg" alt></h2><h2 id="-13"><a href="#-13" class="headerlink" title></a><img src="https://s2.ax1x.com/2019/08/02/e0gFBD.jpg" alt></h2>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;strong&gt;本文展示了个人人像摄影的一些作品,使用lr对颜色微调,使用ps对人物进行维修,尽量保持照片的本质.&lt;/strong&gt;&lt;/p&gt;
+&lt;h2 id&gt;&lt;a href=&quot;#&quot; class=&quot;headerlink&quot; title&gt;&lt;/a&gt;&lt;img src=&quot;https://s2.ax1x.com/2019/08/02/e0c4ts.jpg&quot; alt&gt;&lt;/h2&gt;&lt;h2 id=&quot;-1&quot;&gt;&lt;a href=&quot;#-1&quot; class=&quot;headerlink&quot; title&gt;&lt;/a&gt;&lt;img src=&quot;https://s2.ax1x.com/2019/08/02/e0cT10.jpg&quot; alt&gt;&lt;/h2&gt;
+    
+    </summary>
+    
+      <category term="其他" scheme="http://yoursite.com/categories/%E5%85%B6%E4%BB%96/"/>
+    
+    
+      <category term="img" scheme="http://yoursite.com/tags/img/"/>
+    
+      <category term="素材" scheme="http://yoursite.com/tags/%E7%B4%A0%E6%9D%90/"/>
+    
+  </entry>
   
   <entry>
     <title>H5设置全屏</title>
@@ -54,7 +79,7 @@
     <link href="http://yoursite.com/2019/07/12/canvas/"/>
     <id>http://yoursite.com/2019/07/12/canvas/</id>
     <published>2019-07-12T11:56:10.000Z</published>
-    <updated>2019-07-12T12:41:04.087Z</updated>
+    <updated>2019-08-02T11:49:19.800Z</updated>
     
     <content type="html"><![CDATA[<blockquote><p>本文主要讲述了H5的canvas标签的使用,关于画布和绘画</p></blockquote><h2 id="画布的创建"><a href="#画布的创建" class="headerlink" title="画布的创建"></a>画布的创建</h2><ul><li>使用canvas标签初始化画布</li></ul><p><code>&lt;canvas id=&quot;myCanvas&quot;&gt;&lt;/canvas&gt;</code></p><ul><li>在css中设置边框方便查看</li></ul><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-id">#myCanvas</span>&#123;</span><br><span class="line"><span class="attribute">border</span>: <span class="number">#FFFF00</span> groove <span class="number">2px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><a id="more"></a><ul><li>在JavaScript中动态获取或者设置画布大小</li></ul><figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">myCanvas.width</span> = <span class="number">500</span><span class="comment">;//js里设置宽高,直接使用id</span></span><br><span class="line"><span class="attr">myCanvas.height</span> = <span class="number">500</span><span class="comment">;</span></span><br></pre></td></tr></table></figure><ul><li>绘画需要在Js中获得canvas元素</li></ul><figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">var mv</span> = document.getElementById(<span class="string">"myCanvas"</span>);</span><br><span class="line"><span class="attribute">var cva</span> = mv.getContext(<span class="string">"2d"</span>);</span><br></pre></td></tr></table></figure><h2 id="fileRect方形"><a href="#fileRect方形" class="headerlink" title="fileRect方形"></a>fileRect方形</h2><p><strong>开始绘画时设置颜色和起始位置和大小</strong></p><ul><li>第一个0是x</li><li>第二个0是y</li><li>80是width</li><li>100是height</li><li>fillStyle设置颜色</li><li>fillRect设置位置和大小</li></ul><figure class="highlight lsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cva.fillStyle = <span class="string">"aqua"</span><span class="comment">//颜色</span></span><br><span class="line">cva.fillRect(<span class="number">0</span>,<span class="number">0</span>,<span class="number">80</span>,<span class="number">100</span>);<span class="comment">//位置大小</span></span><br></pre></td></tr></table></figure><p>由此画出一个长方形:<br><img src="https://s2.ax1x.com/2019/07/12/ZfWemt.png" alt></p><h3 id="无填充色"><a href="#无填充色" class="headerlink" title="无填充色"></a>无填充色</h3><figure class="highlight lsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cva.strokeStyle = <span class="string">"#FFFF00"</span>;<span class="comment">//无填充色,同时也是线条的颜色</span></span><br><span class="line">cva.strokeRect(<span class="number">100</span>,<span class="number">100</span>,<span class="number">80</span>,<span class="number">100</span>);<span class="comment">//无填充色定位</span></span><br></pre></td></tr></table></figure><p><img src="https://s2.ax1x.com/2019/07/12/ZfWm0P.png" alt></p><h2 id="绘画重新开始时-需要重置样式和路径"><a href="#绘画重新开始时-需要重置样式和路径" class="headerlink" title="绘画重新开始时,需要重置样式和路径"></a>绘画重新开始时,需要重置样式和路径</h2><figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">cva</span><span class="selector-class">.beginPath</span>();<span class="comment">//重置当前路径点,清除样式</span></span><br><span class="line"><span class="selector-tag">cva</span><span class="selector-class">.closePath</span>();<span class="comment">//关闭路径点,起始和结束闭合</span></span><br></pre></td></tr></table></figure><h2 id="直线绘画"><a href="#直线绘画" class="headerlink" title="直线绘画"></a>直线绘画</h2><ul><li>moveTo设置起点位置</li><li>lineTo设置到达位置</li><li>fill开始绘画填充</li></ul><figure class="highlight lsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">cva.moveTo(<span class="number">20</span>,<span class="number">100</span>);</span><br><span class="line">cva.lineTo(<span class="number">100</span>,<span class="number">100</span>);</span><br><span class="line">cva.lineTo(<span class="number">100</span>,<span class="number">200</span>);</span><br><span class="line">cva.lineTo(<span class="number">20</span>,<span class="number">200</span>);</span><br><span class="line">cva.lineTo(<span class="number">20</span>,<span class="number">100</span>);</span><br><span class="line">cva.fillStyle = <span class="string">"#0000FF"</span>;<span class="comment">//填充颜色</span></span><br><span class="line">cva.fill();<span class="comment">//填充开始</span></span><br></pre></td></tr></table></figure><p><img src="https://s2.ax1x.com/2019/07/12/ZfWVOI.png" alt></p><h2 id="圆形绘画"><a href="#圆形绘画" class="headerlink" title="圆形绘画"></a>圆形绘画</h2><p><strong>context.arc(x,y,r,sAngle,eAngle,counterclockwise);</strong></p><ul><li>x:横向坐标</li><li>y纵向坐标</li><li>r半径</li><li>sAngle起始点</li><li>eAngle结束点</li><li>counterclockwise绘制方向 false顺时针 true逆时针</li></ul><figure class="highlight lsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cva.beginPath();</span><br><span class="line">cva.arc(<span class="number">300</span>,<span class="number">250</span>,<span class="number">50</span>,<span class="number">0</span>,<span class="number">2</span>*Math.<span class="literal">PI</span>,false);</span><br><span class="line">cva.stroke();</span><br></pre></td></tr></table></figure><p><img src="https://s2.ax1x.com/2019/07/12/ZfWAld.png" alt></p>]]></content>
     
@@ -73,8 +98,6 @@
 &lt;figure class=&quot;highlight css&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;selector-id&quot;&gt;#myCanvas&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;			&lt;span class=&quot;attribute&quot;&gt;border&lt;/span&gt;: &lt;span class=&quot;number&quot;&gt;#FFFF00&lt;/span&gt; groove &lt;span class=&quot;number&quot;&gt;2px&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;		&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
     
     </summary>
-    
-      <category term="前端" scheme="http://yoursite.com/categories/%E5%89%8D%E7%AB%AF/"/>
     
     
       <category term="H5" scheme="http://yoursite.com/tags/H5/"/>
